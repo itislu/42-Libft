@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:17:19 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/24 16:17:20 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/09/25 17:30:16 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 	size_t	len_substr;
 
+	if (s == NULL)
+		return (NULL);
 	len_substr = ft_strlen(s);
 	if (len_substr <= start)
 		len_substr = 0;

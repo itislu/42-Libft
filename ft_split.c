@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:17 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/24 16:13:55 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:10:56 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ static size_t	count_strings(char const *s, char c)
 	size_t	pos;
 	size_t	str_count;
 
+	if (s == NULL)
+		return (0);
 	str_count = 0;
 	pos = 0;
 	while (s[pos])
