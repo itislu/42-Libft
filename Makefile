@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/09/25 12:48:32 by ldulling          #+#    #+#              #
+#    Updated: 2023/09/25 12:48:33 by ldulling         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME			=			libft.a
 I				=			./
 D				=			dep/
@@ -80,13 +92,13 @@ cleandep:
 							rm -f $(wildcard $(DEP))
 
 cleandepdir:				cleandep
-							rmdir $D
+							rm -rf $D
 
 cleanobj:
 							rm -f $(wildcard $(OBJ)) $(wildcard $(OBJBONUS))
 
 cleanobjdir:				cleanobj
-							rmdir $O
+							rm -rf $O
 
 clean:						cleandepdir cleanobjdir
 
