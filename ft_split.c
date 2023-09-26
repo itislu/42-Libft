@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:17 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/25 18:10:56 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:45:10 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static char	*protected_malloc(char ***str_array, size_t i, size_t len)
 			i--;
 			free((*str_array)[i]);
 		}
-		free((*str_array));
+		free(*str_array);
 		*str_array = NULL;
 		return (NULL);
 	}
