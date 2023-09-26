@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:51 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/25 17:43:23 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/09/26 12:47:52 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	// Volodomir showed me a much simpler way for this step, sth with decreasing the len
 	skip_set(&start, end, s1, set);
-	skip_set(&end, start, s1, set);	// The problem was end would normally be '\0'
+	skip_set(&end, start, s1, set);
 	str_trimmed = ft_substr(s1, start, end - start + 1);
 	return (str_trimmed);
 }
@@ -59,10 +58,3 @@ static void	skip_set(size_t *pos, size_t lim, char const *s1, char const *set)
 	}
 	return ;
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%sI\n", ft_strtrim("ccc", "c")); // cSTc
-}
-*/
