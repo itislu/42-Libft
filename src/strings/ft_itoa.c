@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:04:05 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 11:02:50 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:52:25 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_itoa(int n)
 	char_count = count_digits(n);
 	if (n < 0)
 		char_count++;
-	s = (char *) malloc((char_count + 1) * sizeof(char));
+	s = (char *) malloc(char_count + 1);
 	if (s == NULL)
 		return (NULL);
 	convert(n, s, char_count);

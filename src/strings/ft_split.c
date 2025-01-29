@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:15:36 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:53:03 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static size_t	strclen(char const *s, size_t *pos, char c)
 
 static char	*protected_malloc(char **str_array, size_t i, size_t len)
 {
-	str_array[i] = (char *) malloc((len) * sizeof(char));
+	str_array[i] = (char *) malloc(len);
 	if (str_array[i] == NULL)
 	{
 		while (i > 0)
