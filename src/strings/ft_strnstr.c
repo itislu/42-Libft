@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:27 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/12 23:00:26 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:14:34 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			l++;
 		if (!little[l])
 			return ((char *) &big[b]);
-		else if (!big[b + l] || b + l == len)
+		if (!big[b + l] || b + l == len)
 			return (NULL);
-		else
-			b++;
+		b++;
 	}
 }

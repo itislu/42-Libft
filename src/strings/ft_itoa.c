@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:04:05 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/24 16:20:14 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:13:26 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,4 @@ static void	convert(long n, char *s, int char_count)
 			n /= 10;
 		}
 	}
-	return ;
 }

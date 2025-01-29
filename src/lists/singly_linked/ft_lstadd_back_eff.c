@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 00:35:15 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/28 16:59:53 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:10:48 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ void	ft_lstadd_back_eff(t_list **lst, t_list **tail, t_list *new)
 	else
 		(*tail)->next = new;
 	*tail = new;
-	return ;
 }

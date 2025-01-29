@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:42:36 by ldulling          #+#    #+#             */
-/*   Updated: 2024/03/22 14:41:35 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:11:28 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_lstsort_merge(t_list **lst, void *(*cmp)(void *, void *))
 	ft_lstsort_merge(&front_half, cmp);
 	ft_lstsort_merge(&back_half, cmp);
 	*lst = sorted_merge(front_half, back_half, cmp);
-	return ;
 }
 
 static void	split_list(t_list *head, t_list **front_half, t_list **back_half)
@@ -50,7 +49,6 @@ static void	split_list(t_list *head, t_list **front_half, t_list **back_half)
 	*front_half = head;
 	*back_half = slow->next;
 	slow->next = NULL;
-	return ;
 }
 
 static t_list	*sorted_merge(t_list *front_half, t_list *back_half, \
@@ -60,7 +58,7 @@ static t_list	*sorted_merge(t_list *front_half, t_list *back_half, \
 
 	if (front_half == NULL)
 		return (back_half);
-	else if (back_half == NULL)
+	if (back_half == NULL)
 		return (front_half);
 	if (cmp(front_half->content, back_half->content))
 	{

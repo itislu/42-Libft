@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:10 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/24 16:22:26 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:13:00 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 		putnbr_fd_recursive(n, fd);
-	return ;
 }
 
 static void	putnbr_fd_recursive(int n, int fd)
@@ -41,5 +40,4 @@ static void	putnbr_fd_recursive(int n, int fd)
 	n = n % 10 + '0';
 	if (write(fd, &n, 1) == -1)
 		return ;
-	return ;
 }

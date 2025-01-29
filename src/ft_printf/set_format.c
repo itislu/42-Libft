@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:21 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/02 20:16:30 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:09:41 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ static void	set_width(const char *format, int *i, t_format *f, va_list *ap)
 		}
 	}
 	f->width = nbr;
-	return ;
 }
 
 static void	set_precision(const char *format, int *i, t_format *f, va_list *ap)
@@ -112,7 +111,6 @@ static void	set_precision(const char *format, int *i, t_format *f, va_list *ap)
 		}
 		f->precision = nbr;
 	}
-	return ;
 }
 
 static void	set_specifier(const char *format, int *i, t_format *f)
@@ -127,5 +125,4 @@ static void	set_specifier(const char *format, int *i, t_format *f)
 	}
 	else
 		f->unresolved = 1;
-	return ;
 }

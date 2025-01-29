@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:04:29 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/23 11:41:51 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:11:06 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		(*f)(cur->content);
 		cur = cur->next;
 	}
-	return ;
 }

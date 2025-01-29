@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:03:49 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/24 16:21:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:05:21 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@ int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
-	else
-		return (0);
+	return (0);
 }

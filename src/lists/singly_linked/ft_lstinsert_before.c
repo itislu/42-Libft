@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:15:15 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/27 02:46:21 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:11:04 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,4 @@ void	ft_lstinsert_before(t_list **lst, t_list *cur, t_list *new)
 	next = prev->next;
 	prev->next = new;
 	ft_lstlast(new)->next = next;
-	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:04:12 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/23 14:05:01 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:10:16 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,4 @@ void	ft_lstadd_back_d(t_list_d **lst, t_list_d *new)
 		cur->next = new;
 		new->prev = cur;
 	}
-	return ;
 }

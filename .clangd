@@ -1,0 +1,31 @@
+CompileFlags:
+  Add: [-Wall, -Wextra, -Werror, --language=c, "-Iinc"]
+  Compiler: cc
+
+Diagnostics:
+  ClangTidy:
+    Add:
+      [
+        "bugprone-*",
+        "clang-analyzer-*",
+        "misc-*",
+        "performance-*",
+        "readability-*",
+      ]
+    Remove:
+      [
+        bugprone-easily-swappable-parameters,
+        misc-no-recursion,
+        readability-braces-around-statements,
+        readability-identifier-length,
+        readability-magic-numbers,
+      ]
+    FastCheckFilter: None
+  MissingIncludes: Strict
+
+InlayHints:
+  BlockEnd: No
+  Designators: Yes
+  Enabled: Yes
+  ParameterNames: Yes
+  DeducedTypes: Yes

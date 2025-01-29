@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:04:22 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/20 18:25:58 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:10:20 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_lstclear_d(t_list_d **lst, void (*del)(void *))
 		*lst = (*lst)->next;
 		ft_lstdelone_d(cur, del);
 	}
-	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:05 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/24 16:15:06 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:14:16 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		(*f)(i, &s[i]);
 		i++;
 	}
-	return ;
 }

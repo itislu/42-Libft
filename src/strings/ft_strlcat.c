@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:16 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/23 12:21:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:14:21 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		srclen++;
 	if (size < dstlen)
 		return (size + srclen);
-	else
-		return (dstlen + srclen);
+	return (dstlen + srclen);
 }

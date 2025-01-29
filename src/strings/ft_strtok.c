@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 21:48:31 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/23 15:34:45 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:15:08 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ char	*ft_strtok(char *str, const char *delim)
 	}
 	if (*result)
 		return (result);
-	else
-		return (NULL);
+	return (NULL);
 }

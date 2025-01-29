@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:14 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/24 16:22:27 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:13:11 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	if (write(fd, s, ft_strlen(s)) == -1)
 		return ;
-	return ;
 }

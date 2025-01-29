@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:08 by ldulling          #+#    #+#             */
-/*   Updated: 2024/05/05 17:21:20 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:01:32 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include "libft.h"
+# include <stddef.h>
 
 # define SPECIFIERS				"cspdiuxX%"
 # define FLAGS					"#+- 0"

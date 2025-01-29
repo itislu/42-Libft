@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:16:52 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/23 11:55:40 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:11:17 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	ft_lstsort_bubble(t_list **lst, void *(*cmp)(void *, void *))
 			ft_lstswap_head(lst);
 		is_sorted = bubble_sort(lst, cmp);
 	}
-	return ;
 }
 
 static bool	bubble_sort(t_list **lst, void *(*cmp)(void *, void *))

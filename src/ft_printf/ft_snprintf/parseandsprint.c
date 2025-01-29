@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2024/03/19 16:04:27 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:06:01 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,4 @@ void	reset_sformat(t_sformat *f)
 	f->width = 0;
 	f->precision = NO_PRECISION_SET;
 	f->specifier = '\0';
-	return ;
 }

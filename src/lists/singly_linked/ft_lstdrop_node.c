@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 23:58:36 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/27 02:47:04 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:10:57 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,4 @@ void	ft_lstdrop_node(t_list **lst, t_list **node, void (*del)(void *))
 	ft_lstdelone(*node, del);
 	prev->next = next;
 	*node = next;
-	return ;
 }
