@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:57 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/23 17:15:07 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:16:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_strlcpy function copies the NUL-terminated string from src to dst.

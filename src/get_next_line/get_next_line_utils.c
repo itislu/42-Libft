@@ -6,11 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:27:22 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:09:57 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:08:03 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdlib.h>
+#include <sys/types.h>
 
 int	add_new_node(t_buf *cur)
 {

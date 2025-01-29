@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:04:32 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/27 00:25:46 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:09:03 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 t_list_d	*ft_lstlast_d(t_list_d *lst)
 {

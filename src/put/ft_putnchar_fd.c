@@ -6,11 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:04 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/20 19:15:03 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:13:22 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
+#include <unistd.h>
 
 /**
  * The ft_putnchar_fd function writes a character n times to the given file

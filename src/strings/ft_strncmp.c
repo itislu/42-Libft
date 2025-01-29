@@ -6,11 +6,11 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:22 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/17 12:40:42 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:04:09 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_strncmp function compares up to n characters of the string pointed to

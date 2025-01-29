@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 20:30:19 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/20 12:40:06 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:09:06 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_lstnew_back_d function creates a new node with the provided content

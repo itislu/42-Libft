@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 02:17:12 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/29 05:41:19 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:15:00 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 size_t	ft_sputnchar(char *str, unsigned char c, size_t n)
 {

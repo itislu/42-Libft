@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:16:52 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:11:17 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:10:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 static bool	bubble_sort(t_list **lst, void *(*cmp)(void *, void *));
 

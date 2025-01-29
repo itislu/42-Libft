@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:14 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/17 13:37:42 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:48:06 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static int	print_flags(const char *format, int *i, t_format *f);
 static int	print_width(const char *format, int *i, t_format *f);

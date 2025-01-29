@@ -6,11 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2024/05/05 17:21:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:58:14 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdarg.h>
+#include <stddef.h>
 
 int	ft_snprintf(char *str, size_t size, const char *format, ...)
 {

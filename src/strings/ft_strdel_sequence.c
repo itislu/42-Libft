@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:30:19 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/12 23:43:55 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:16:02 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /**
  * The ft_strdel_sequence function removes all occurrences of a sequence from a

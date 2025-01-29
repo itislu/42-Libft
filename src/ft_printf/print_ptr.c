@@ -6,11 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:12 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/17 18:08:57 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:48:11 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
+#include <stddef.h>
 
 static int	print_nullptr(t_format *f);
 static int	ptrlen(size_t ptr);

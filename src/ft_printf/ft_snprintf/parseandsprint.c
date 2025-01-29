@@ -6,11 +6,14 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:06:01 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:46:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
+#include <stdarg.h>
+#include <stddef.h>
 
 void	parseandsprint(const char *format, int *i, t_sformat *f, va_list *ap)
 {

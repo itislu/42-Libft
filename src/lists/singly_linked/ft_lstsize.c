@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:08:06 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/18 03:43:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:10:14 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 int	ft_lstsize(t_list *lst)
 {

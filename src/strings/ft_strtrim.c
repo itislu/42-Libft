@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:51 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:15:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:17:39 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 static void	skip_set(size_t *pos, size_t lim, char const *s1, char const *set);
 

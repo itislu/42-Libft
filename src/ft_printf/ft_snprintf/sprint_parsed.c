@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:14 by ldulling          #+#    #+#             */
-/*   Updated: 2024/03/19 16:06:06 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:47:22 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static void	sprint_flags(const char *format, int *i, t_sformat *f);
 static void	sprint_width(const char *format, int *i, t_sformat *f);

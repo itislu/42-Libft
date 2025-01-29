@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:00:03 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/26 19:42:22 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:15:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /**
  * The ft_split_at_index function splits a string at a given index into two

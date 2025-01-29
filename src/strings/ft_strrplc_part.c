@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 15:19:37 by ldulling          #+#    #+#             */
-/*   Updated: 2024/02/15 02:50:14 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:17:23 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static char	*join_front_and_rplcmt(const char *str, const char *rplcmt, \
 									size_t start);

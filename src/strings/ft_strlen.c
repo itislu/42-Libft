@@ -6,11 +6,11 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:06 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/23 12:18:50 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:03:55 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_strlen function calculates the length of the string pointed to by s,

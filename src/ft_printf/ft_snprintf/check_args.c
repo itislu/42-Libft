@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:45:40 by ldulling          #+#    #+#             */
-/*   Updated: 2024/05/05 17:21:32 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:50:36 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stddef.h>
 
 bool	check_args(char *str, size_t size, const char *format, t_sformat *f)
 {

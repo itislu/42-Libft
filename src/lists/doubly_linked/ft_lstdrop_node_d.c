@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 00:03:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:10:25 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:08:58 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_lstdrop_node_d function removes a node from a doubly linked list.

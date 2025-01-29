@@ -6,11 +6,14 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/17 13:42:46 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:07:46 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdarg.h>
+#include <stddef.h>
+#include <unistd.h>
 
 int	ft_printf(const char *format, ...)
 {

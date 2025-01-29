@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 23:36:36 by ldulling          #+#    #+#             */
-/*   Updated: 2024/02/15 02:52:03 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:17:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /**
  * The ft_strrplc_sequence function replaces all occurrences of a sequence in a

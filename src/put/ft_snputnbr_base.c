@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 02:20:16 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/29 12:05:25 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:14:53 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 static size_t	get_base_len(const char *base);
 static bool		check_for_duplicate(const char *base, size_t base_len);

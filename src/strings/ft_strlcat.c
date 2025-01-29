@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:16 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:14:21 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:16:25 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_strlcat function appends the NUL-terminated string src to the end of

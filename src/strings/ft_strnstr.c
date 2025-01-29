@@ -6,11 +6,11 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:27 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:14:34 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:04:20 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_strnstr function locates the first occurrence of the null-terminated

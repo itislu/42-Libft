@@ -6,18 +6,15 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:28:58 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:01:27 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:56:54 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <limits.h>
-# include <stdint.h>
-# include <stdlib.h>
+# include <stddef.h>
 # include <sys/types.h>
-# include <unistd.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE	128

@@ -6,11 +6,14 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:08:50 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:52:53 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
+#include <stdarg.h>
+#include <stddef.h>
 
 int	parseandprint(const char *format, int *i, t_format *f, va_list *ap)
 {

@@ -6,11 +6,9 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 11:02:14 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:12:13 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:14:11 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 /**
  * The ft_max function returns the maximum of two integers.

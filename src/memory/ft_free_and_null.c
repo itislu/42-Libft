@@ -6,11 +6,11 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 03:10:28 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/27 02:47:23 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:31:17 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 /**
  * The ft_free_and_null function frees the memory pointed to by *ptr and

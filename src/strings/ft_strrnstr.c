@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 18:05:04 by ldulling          #+#    #+#             */
-/*   Updated: 2024/03/28 18:52:38 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:17:17 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_strrnstr function locates the last occurrence of the null-terminated

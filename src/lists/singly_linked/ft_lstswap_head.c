@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 11:52:20 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/27 02:47:33 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:10:30 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_lstswap_head function swaps the first two nodes of a singly linked

@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:14:59 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/23 16:28:07 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:16:07 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /**
  * The ft_strdup function duplicates the string pointed to by s.

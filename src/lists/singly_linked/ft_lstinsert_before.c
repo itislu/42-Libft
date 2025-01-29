@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:15:15 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:11:04 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:09:45 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_lstinsert_before function inserts a new node or even a full linked

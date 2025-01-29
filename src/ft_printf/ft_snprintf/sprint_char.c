@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:51 by ldulling          #+#    #+#             */
-/*   Updated: 2024/03/19 16:04:40 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:46:55 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 void	sprint_char(unsigned char c, t_sformat *f)
 {

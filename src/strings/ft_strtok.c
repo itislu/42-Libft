@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 21:48:31 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:15:08 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:17:34 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_strtok function breaks a string into a series of tokens using the

@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:02:33 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:11:42 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:11:51 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	multiplication_is_overflow(size_t n1, size_t n2);
 

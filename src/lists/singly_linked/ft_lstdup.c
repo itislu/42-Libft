@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 00:35:12 by ldulling          #+#    #+#             */
-/*   Updated: 2024/06/07 19:09:20 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:09:40 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_lstdup function duplicates a singly linked list by creating new nodes

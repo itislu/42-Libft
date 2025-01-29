@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 00:35:15 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:10:48 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:09:18 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_lstadd_back_eff function adds a node to the end of the singly linked

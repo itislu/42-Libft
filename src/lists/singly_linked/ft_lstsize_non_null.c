@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 01:52:32 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/18 12:14:02 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:10:11 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_lstsize_non_null function counts the number of non-null content nodes

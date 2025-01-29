@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:09:14 by ldulling          #+#    #+#             */
-/*   Updated: 2024/01/25 16:09:17 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:09:58 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_lstnew_front function creates a new node with the provided content and

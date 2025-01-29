@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:42:36 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:11:28 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:10:23 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 static void		split_list(t_list *head, t_list **front_half, \
 							t_list **back_half);

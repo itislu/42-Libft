@@ -6,11 +6,16 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 15:06:25 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/02 20:17:55 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:08:27 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <bits/posix1_lim.h>
+#include <limits.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 char	*get_next_line(int fd)
 {

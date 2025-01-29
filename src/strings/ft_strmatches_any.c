@@ -6,11 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:50:45 by ldulling          #+#    #+#             */
-/*   Updated: 2023/12/23 18:12:21 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:16:58 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdarg.h>
+#include <stddef.h>
 
 static int	search_null_str(va_list ap, int n);
 

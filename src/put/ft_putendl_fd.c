@@ -6,11 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:07 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:12:52 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:12:48 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
+#include <unistd.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {

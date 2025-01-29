@@ -6,11 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:10 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:13:00 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:13:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
+#include <unistd.h>
 
 static void	putnbr_fd_recursive(int n, int fd);
 

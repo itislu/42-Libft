@@ -6,14 +6,15 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:08 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:01:32 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:54:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
+# include <stdarg.h>
+# include <stdbool.h>
 # include <stddef.h>
 
 # define SPECIFIERS				"cspdiuxX%"
