@@ -6,105 +6,107 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 12:48:32 by ldulling          #+#    #+#              #
-#    Updated: 2023/09/25 12:48:33 by ldulling         ###   ########.fr        #
+#    Updated: 2025/01/10 16:51:36 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			libft.a
-I				=			./
-D				=			dep/
-O				=			obj/
 
-SRC				=			ft_atoi.c \
-							ft_bzero.c \
-							ft_calloc.c \
-							ft_isalnum.c \
-							ft_isalpha.c \
-							ft_isascii.c \
-							ft_isdigit.c \
-							ft_isprint.c \
-							ft_memchr.c \
-							ft_memcmp.c \
-							ft_memcpy.c \
-							ft_memmove.c \
-							ft_memset.c \
-							ft_strchr.c \
-							ft_strdup.c \
-							ft_strlcat.c \
-							ft_strlcpy.c \
-							ft_strlen.c \
-							ft_strncmp.c \
-							ft_strnstr.c \
-							ft_strrchr.c \
-							ft_tolower.c \
-							ft_toupper.c \
-							\
-							ft_itoa.c \
-							ft_putchar_fd.c \
-							ft_putendl_fd.c \
-							ft_putnbr_fd.c \
-							ft_putstr_fd.c \
-							ft_split.c \
-							ft_striteri.c \
-							ft_strjoin.c \
-							ft_strmapi.c \
-							ft_strtrim.c \
-							ft_substr.c
+# ***************************** CONFIGURATION ******************************** #
 
-SRCBONUS		=			ft_lstadd_back.c \
-							ft_lstadd_front.c \
-							ft_lstclear.c \
-							ft_lstdelone.c \
-							ft_lstiter.c \
-							ft_lstlast.c \
-							ft_lstmap.c \
-							ft_lstnew.c \
-							ft_lstsize.c
+NAME			:=	libft.a
 
-CC				=			cc
-CFLAGS			=			-Wall -Wextra -Werror $(foreach X,$I,-I$(X))
-ARFLAGS			=			rcs
+# Header files directory:
+I				:=	inc/
 
-DEP				=			$(SRC:%.c=$D%.d)
-OBJ				=			$(SRC:%.c=$O%.o)
-OBJBONUS		=			$(SRCBONUS:%.c=$O%.o)
+# Build directories:
+B				:=	build/
+D				:=	$B_dep/
+O				:=	$B_obj/
 
-.PHONY:						all bonus clean fclean re
+# Source files directory:
+S				:=	src/
 
-all:						$(NAME)
+# Makefiles in build/ directory with source file listings to be included
+# (files that are dependent on others need to be below their dependency):
+SOURCELISTS		:=	libft.mk
 
-$(NAME):					$(OBJ)
-							ar $(ARFLAGS) $(NAME) $^
+# Flags:
+CC				?=	cc
+CFLAGS			?=	-Wall -Wextra -Werror
+INCFLAGS		:=	$(addprefix -I,$I)
+DEBUGFLAGS		:=	-g
+ARFLAGS			:=	rcs
 
-bonus:						$(OBJ) $(OBJBONUS)
-							ar $(ARFLAGS) $(NAME) $^
 
-$(OBJ) $(OBJBONUS): $O%.o:	%.c | $O
-							$(CC) $(CFLAGS) -c $< -o $@
+# ***************************** BUILD PROCESS ******************************** #
 
-$(DEP): $D%.d:				%.c | $D
-							$(CC) $(CFLAGS) -MM -MP -MF $@ -MT "$O$*.o $@" $<
+.DEFAULT_GOAL	:=	all
 
-$O $D:
-							mkdir -p $@
+include				$(addprefix $B,$(SOURCELISTS))
 
-cleandep:
-							rm -f $(wildcard $(DEP))
+OBJ				:=	$(SRC:%.c=$O%.o)
+DEP				:=	$(SRC:%.c=$D%.d)
+OBJ_SUBDIRS		:=	$(sort $(dir $(OBJ)))
+DEP_SUBDIRS		:=	$(sort $(dir $(DEP)))
 
-cleandepdir:				cleandep
-							rm -rf $D
+.PHONY			:	all cleandep cleanobj clean fclean re debug norm
 
-cleanobj:
-							rm -f $(wildcard $(OBJ)) $(wildcard $(OBJBONUS))
+all				:	$(NAME)
 
-cleanobjdir:				cleanobj
-							rm -rf $O
+$(NAME)			:	$(OBJ)
+					ar $(ARFLAGS) $(NAME) $(OBJ)
 
-clean:						cleandepdir cleanobjdir
+$(OBJ):	$O%.o	:	$S%.c | $(OBJ_SUBDIRS)
+					$(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
 
-fclean:						clean
-							rm -f $(NAME)
+$(DEP):	$D%.d	:	$S%.c | $(DEP_SUBDIRS)
+	@				$(CC) $(CFLAGS) $(INCFLAGS) -M -MP -MF $@ -MT "$O$*.o $@" $<
 
-re:							fclean all
+$(OBJ_SUBDIRS) \
+$(DEP_SUBDIRS)	:
+	@				mkdir -p $@
 
--include 					$(DEP)
+cleandep		:
+ifneq (,$(wildcard $(DEP)))
+					rm -f $(DEP)
+endif
+ifneq (,$(wildcard $D))
+					-find $(D) -type d -empty -delete
+endif
+
+cleanobj		:
+ifneq (,$(wildcard $(OBJ)))
+					rm -f $(OBJ)
+endif
+ifneq (,$(wildcard $O))
+					-find $(O) -type d -empty -delete
+endif
+
+clean			:	cleandep cleanobj
+
+fclean			:	clean
+ifneq (,$(wildcard $(NAME)))
+					rm -f $(NAME)
+endif
+
+re				:	fclean all
+
+debug			:	CFLAGS += $(DEBUGFLAGS)
+debug			:	re
+
+norm			:
+	@				-norminette -R CheckForbiddenSourceHeader -R CheckDefine \
+					$(addprefix $S,$(SRC)) $(foreach dir,$I,$(dir)*.h)
+
+ifeq (,$(filter cleandep cleanobj clean fclean re debug norm,$(MAKECMDGOALS)))
+    ifneq (,$(wildcard $O))
+        -include	$(DEP)
+    endif
+endif
+
+
+# *************************** MAKEFILE DEBUGGING ***************************** #
+
+# Prints the values of the variable given after the minus.
+print-%			:
+	@				echo $* = $($*)
