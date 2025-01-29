@@ -14,7 +14,7 @@
 #include <stddef.h>
 
 /**
- * The ft_strtok function checks if the string s contains digits ONLY.
+ * The ft_strisdigits function checks if the string s contains digits ONLY.
  *
  * @param s    The string to check.
  *
