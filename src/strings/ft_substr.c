@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:17:19 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:17:43 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:30:46 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		if (len_substr > len)
 			len_substr = len;
 	}
-	substr = (char *) malloc(len_substr + 1);
+	substr = (char *)malloc(len_substr + 1);
 	if (substr == NULL)
 		return (NULL);
 	if (len_substr > 0)

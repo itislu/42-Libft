@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 02:20:16 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:14:53 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:39:23 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ size_t	ft_snputnbr_base(char *str, long n, const char *base, size_t max_len)
 		if (written == max_len)
 			return (written);
 		max_len--;
-		u_n = (unsigned long) -n;
+		u_n = (unsigned long)-n;
 	}
 	else
-		u_n = (unsigned long) n;
+		u_n = (unsigned long)n;
 	u_n = truncate_nbr_if_needed(u_n, base_len, max_len);
 	written += sprint(&str[written], u_n, base, base_len);
 	return (written);

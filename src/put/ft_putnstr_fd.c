@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:30 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:13:29 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:39:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ size_t	ft_putnstr_fd(const char *s, size_t n, int fd)
 	written += write(fd, s, len);
 	if (written < 0)
 		written = 0;
-	return ((size_t) written);
+	return ((size_t)written);
 }

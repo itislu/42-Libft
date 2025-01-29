@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:52:53 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:38:27 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ int	print_argument(t_format *f, va_list *ap)
 
 	printed = 0;
 	if (f->specifier == 'c')
-		printed = print_char((unsigned char) va_arg(*ap, int), f);
+		printed = print_char((unsigned char)va_arg(*ap, int), f);
 	else if (f->specifier == 's')
 		printed = print_str(va_arg(*ap, const char *), f);
 	else if (f->specifier == 'p')
-		printed = print_ptr((size_t) va_arg(*ap, void *), f);
+		printed = print_ptr((size_t)va_arg(*ap, void *), f);
 	else if (f->specifier == 'd' || f->specifier == 'i')
-		printed = print_nbr((long) va_arg(*ap, int), f);
+		printed = print_nbr((long)va_arg(*ap, int), f);
 	else if (f->specifier == 'u')
-		printed = print_nbr((long) va_arg(*ap, unsigned int), f);
+		printed = print_nbr((long)va_arg(*ap, unsigned int), f);
 	else if (f->specifier == 'x' || f->specifier == 'X')
-		printed = print_nbr((long) va_arg(*ap, unsigned int), f);
+		printed = print_nbr((long)va_arg(*ap, unsigned int), f);
 	else if (f->specifier == '%')
 		printed = ft_putnchar_fd('%', 1, f->fd);
 	return (printed);

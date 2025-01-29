@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 18:05:04 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:17:17 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:47:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strrnstr(const char *big, const char *little, size_t len)
 	if (big == NULL && len == 0)
 		return (NULL);
 	if (*little == '\0')
-		return ((char *) &big[ft_strlen(big)]);
+		return ((char *)&big[ft_strlen(big)]);
 	last = NULL;
 	tmp = ft_strnstr(big, little, len);
 	while (tmp)

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:22 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:16:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:48:34 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_strisdigits(const char *s)
 
 	if (s == NULL)
 		return (0);
-	casted_ptr_s = (const unsigned char *) s;
+	casted_ptr_s = (const unsigned char *)s;
 	while (ft_isdigit(*casted_ptr_s))
 		casted_ptr_s++;
 	if (*casted_ptr_s == '\0')

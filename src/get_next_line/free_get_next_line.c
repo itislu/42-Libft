@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 09:07:32 by ldulling          #+#    #+#             */
-/*   Updated: 2024/06/27 09:08:22 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:38:33 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	free_get_next_line(void)
 {
-	(void) get_next_line(-1);
+	(void)get_next_line(-1);
 }

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:58:26 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:37:50 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_vsnprintf(char *str, size_t size, const char *format, va_list ap)
 	f.unresolved = 0;
 	f.sprinted = 0;
 	i = 0;
-	while (format[i] && f.sprinted < (int) f.size)
+	while (format[i] && f.sprinted < (int)f.size)
 	{
 		reset_sformat(&f);
 		parseandsprint(format, &i, &f, &ap_copy);

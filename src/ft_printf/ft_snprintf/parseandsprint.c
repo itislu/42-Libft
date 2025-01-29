@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:46:29 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:38:15 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ void	parseandsprint(const char *format, int *i, t_sformat *f, va_list *ap)
 void	sprint_argument(t_sformat *f, va_list *ap)
 {
 	if (f->specifier == 'c')
-		sprint_char((unsigned char) va_arg(*ap, int), f);
+		sprint_char((unsigned char)va_arg(*ap, int), f);
 	else if (f->specifier == 's')
 		sprint_str(va_arg(*ap, const char *), f);
 	else if (f->specifier == 'p')
-		sprint_ptr((size_t) va_arg(*ap, void *), f);
+		sprint_ptr((size_t)va_arg(*ap, void *), f);
 	else if (f->specifier == 'd' || f->specifier == 'i')
-		sprint_nbr((long) va_arg(*ap, int), f);
+		sprint_nbr((long)va_arg(*ap, int), f);
 	else if (f->specifier == 'u')
-		sprint_nbr((long) va_arg(*ap, unsigned int), f);
+		sprint_nbr((long)va_arg(*ap, unsigned int), f);
 	else if (f->specifier == 'x' || f->specifier == 'X')
-		sprint_nbr((long) va_arg(*ap, unsigned int), f);
+		sprint_nbr((long)va_arg(*ap, unsigned int), f);
 	else if (f->specifier == '%')
 		f->sprinted += ft_sputnchar(&f->str[f->sprinted], '%', max_size(f, 1));
 }

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:14:59 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 11:53:26 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:30:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strndup(const char *s, size_t n)
 	len = ft_strlen(s);
 	if (len > n)
 		len = n;
-	dup = (char *) malloc(len + 1);
+	dup = (char *)malloc(len + 1);
 	if (dup == NULL)
 		return (NULL);
 	dup = ft_memcpy(dup, s, len);

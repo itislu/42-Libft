@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:27:22 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:08:03 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:30:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	add_new_node(t_buf *cur)
 {
-	cur->next = (t_buf *) malloc(sizeof(t_buf));
+	cur->next = (t_buf *)malloc(sizeof(t_buf));
 	if (!cur->next)
 		return (0);
 	cur->next->bytes_unsaved = 0;
@@ -74,7 +74,7 @@ int	initial_check(int fd, t_buf **head)
 		return (0);
 	if (!*head)
 	{
-		*head = (t_buf *) malloc(sizeof(t_buf));
+		*head = (t_buf *)malloc(sizeof(t_buf));
 		if (!*head)
 			return (0);
 		(*head)->buf[0] = '\0';

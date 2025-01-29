@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:09 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:16:20 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:30:40 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	strj = (char *) malloc(len1 + len2 + 1);
+	strj = (char *)malloc(len1 + len2 + 1);
 	if (strj == NULL)
 		return (NULL);
 	if (len1)
