@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:08 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:54:29 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:26:21 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_sformat
 	int		unresolved;
 	char	*str;
 	size_t	size;
-	int		sprinted;
+	size_t	sprinted;
 }	t_sformat;
 
 \
@@ -85,6 +85,7 @@ void	sprint_ptr(size_t ptr, t_sformat *f);
 void	sprint_str(const char *str, t_sformat *f);
 size_t	max_size(t_sformat *f, size_t size);
 void	reset_sformat(t_sformat *f);
+int		return_value(t_sformat *f);
 int		set_sformat(const char *format, int *i, t_sformat *f, va_list *ap);
 
 #endif
