@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:10 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:13:12 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:57:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putnbr_fd(int n, int fd)
 		return ;
 	if (n == INT_MIN)
 	{
-		if (write(fd, "-2147483648", 11) == -1)
+		if (write(fd, "-2147483648", sizeof("-2147483648") - 1) == -1)
 			return ;
 	}
 	else if (n < 0)
