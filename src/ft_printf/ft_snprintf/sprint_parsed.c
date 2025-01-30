@@ -6,20 +6,21 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:14 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:47:22 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 06:54:28 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
+#include <stddef.h>
 
-static void	sprint_flags(const char *format, int *i, t_sformat *f);
-static void	sprint_width(const char *format, int *i, t_sformat *f);
-static void	sprint_precision(const char *format, int *i, t_sformat *f);
+static void	sprint_flags(const char *format, size_t *i, t_sformat *f);
+static void	sprint_width(const char *format, size_t *i, t_sformat *f);
+static void	sprint_precision(const char *format, size_t *i, t_sformat *f);
 
-void	sprint_parsed(const char *format, int parsed, t_sformat *f)
+void	sprint_parsed(const char *format, size_t parsed, t_sformat *f)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (format[0] == '%')
@@ -34,7 +35,7 @@ void	sprint_parsed(const char *format, int parsed, t_sformat *f)
 			max_size(f, parsed - i));
 }
 
-static void	sprint_flags(const char *format, int *i, t_sformat *f)
+static void	sprint_flags(const char *format, size_t *i, t_sformat *f)
 {
 	if (f->hash)
 		f->sprinted += ft_sputnchar(&f->str[f->sprinted], '#', max_size(f, 1));
@@ -50,7 +51,7 @@ static void	sprint_flags(const char *format, int *i, t_sformat *f)
 		(*i)++;
 }
 
-static void	sprint_width(const char *format, int *i, t_sformat *f)
+static void	sprint_width(const char *format, size_t *i, t_sformat *f)
 {
 	if (f->width)
 		f->sprinted += ft_snputnbr_base(&f->str[f->sprinted], f->width,
@@ -62,7 +63,7 @@ static void	sprint_width(const char *format, int *i, t_sformat *f)
 			(*i)++;
 }
 
-static void	sprint_precision(const char *format, int *i, t_sformat *f)
+static void	sprint_precision(const char *format, size_t *i, t_sformat *f)
 {
 	if (f->precision >= 0)
 	{

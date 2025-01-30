@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 16:21:12 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 06:56:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 #include <stdarg.h>
 #include <stddef.h>
 
-int	parseandprint(const char *format, int *i, t_format *f, va_list *ap)
+size_t	parseandprint(const char *format, size_t *i, t_format *f, va_list *ap)
 {
-	int	printed;
-	int	parsed;
+	size_t	printed;
+	size_t	parsed;
 
 	printed = 0;
 	parsed = 1;
@@ -35,9 +35,9 @@ int	parseandprint(const char *format, int *i, t_format *f, va_list *ap)
 	return (printed);
 }
 
-int	print_argument(t_format *f, va_list *ap)
+size_t	print_argument(t_format *f, va_list *ap)
 {
-	int	printed;
+	size_t	printed;
 
 	printed = 0;
 	if (f->specifier == 'c')

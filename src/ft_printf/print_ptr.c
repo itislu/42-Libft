@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:12 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:48:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:04:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 #include "libft.h"
 #include <stddef.h>
 
-static int	print_nullptr(t_format *f);
-static int	ptrlen(size_t ptr);
-static int	fullptrlen(int len_ptr, t_format *f);
-static int	puthex(size_t ptr, t_format *f);
+static unsigned int	print_nullptr(t_format *f);
+static unsigned int	ptrlen(size_t ptr);
+static unsigned int	fullptrlen(unsigned int len_ptr, t_format *f);
+static unsigned int	puthex(size_t ptr, t_format *f);
 
-int	print_ptr(size_t ptr, t_format *f)
+unsigned int	print_ptr(size_t ptr, t_format *f)
 {
-	int	len_ptr;
-	int	len_full;
-	int	printed;
+	unsigned int	len_ptr;
+	unsigned int	len_full;
+	unsigned int	printed;
 
 	if (!ptr)
 		return (print_nullptr(f));
@@ -37,7 +37,7 @@ int	print_ptr(size_t ptr, t_format *f)
 	else if (f->space)
 		printed += ft_putnchar_fd(' ', 1, f->fd);
 	printed += ft_putnstr_fd("0x", 2, f->fd);
-	if (f->precision > len_ptr)
+	if (f->precision > (int)len_ptr)
 		printed += ft_putnchar_fd('0', f->precision - len_ptr, f->fd);
 	else if (f->zero && !f->minus && f->precision < 0 && f->width > len_full)
 		printed += ft_putnchar_fd('0', f->width - len_full, f->fd);
@@ -47,10 +47,10 @@ int	print_ptr(size_t ptr, t_format *f)
 	return (printed);
 }
 
-static int	print_nullptr(t_format *f)
+static unsigned int	print_nullptr(t_format *f)
 {
-	int	len;
-	int	printed;
+	unsigned int	len;
+	unsigned int	printed;
 
 	len = ft_strlen(NULL_PRINTOUT_PTR);
 	printed = 0;
@@ -62,9 +62,9 @@ static int	print_nullptr(t_format *f)
 	return (printed);
 }
 
-static int	ptrlen(size_t ptr)
+static unsigned int	ptrlen(size_t ptr)
 {
-	int	len_ptr;
+	unsigned int	len_ptr;
 
 	len_ptr = 0;
 	while (ptr)
@@ -75,12 +75,12 @@ static int	ptrlen(size_t ptr)
 	return (len_ptr);
 }
 
-static int	fullptrlen(int len_ptr, t_format *f)
+static unsigned int	fullptrlen(unsigned int len_ptr, t_format *f)
 {
-	int	len_full;
+	unsigned int	len_full;
 
 	len_full = len_ptr;
-	if (len_full < f->precision)
+	if ((int)len_full < f->precision)
 		len_full = f->precision;
 	if (f->plus || f->space)
 		len_full++;
@@ -88,9 +88,9 @@ static int	fullptrlen(int len_ptr, t_format *f)
 	return (len_full);
 }
 
-static int	puthex(size_t ptr, t_format *f)
+static unsigned int	puthex(size_t ptr, t_format *f)
 {
-	int	printed;
+	unsigned int	printed;
 
 	printed = 0;
 	if (ptr >= 16)

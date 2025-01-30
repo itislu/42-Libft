@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 07:30:03 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:36:38 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	ft_snprintf(char *str, size_t size, const char *format, ...)
 {
-	int			i;
+	size_t		i;
 	t_sformat	f;
 	va_list		ap;
 

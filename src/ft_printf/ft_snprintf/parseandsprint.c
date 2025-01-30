@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 18:31:30 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 06:49:20 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <stdarg.h>
 #include <stddef.h>
 
-void	parseandsprint(const char *format, int *i, t_sformat *f, va_list *ap)
+void	parseandsprint(const char *format, size_t *i, t_sformat *f, va_list *ap)
 {
-	int	parsed;
+	size_t	parsed;
 
 	parsed = 1;
 	if (format[(*i)++] == '%')

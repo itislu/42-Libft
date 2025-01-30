@@ -6,23 +6,24 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:21 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 16:21:05 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:42:23 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 #include <stdarg.h>
+#include <stddef.h>
 
-static void	set_flags(const char *format, int *i, t_sformat *f);
-static void	set_width(const char *format, int *i, t_sformat *f, va_list *ap);
-static void	set_precision(const char *format, int *i, t_sformat *f, \
+static void	set_flags(const char *format, size_t *i, t_sformat *f);
+static void	set_width(const char *format, size_t *i, t_sformat *f, va_list *ap);
+static void	set_precision(const char *format, size_t *i, t_sformat *f, \
 							va_list *ap);
-static void	set_specifier(const char *format, int *i, t_sformat *f);
+static void	set_specifier(const char *format, size_t *i, t_sformat *f);
 
-int	set_sformat(const char *format, int *i, t_sformat *f, va_list *ap)
+size_t	set_sformat(const char *format, size_t *i, t_sformat *f, va_list *ap)
 {
-	int	i_original;
+	size_t	i_original;
 
 	i_original = *i;
 	if (format[*i])
@@ -42,7 +43,7 @@ int	set_sformat(const char *format, int *i, t_sformat *f, va_list *ap)
 	return (*i - i_original);
 }
 
-static void	set_flags(const char *format, int *i, t_sformat *f)
+static void	set_flags(const char *format, size_t *i, t_sformat *f)
 {
 	while (true)
 	{
@@ -62,7 +63,7 @@ static void	set_flags(const char *format, int *i, t_sformat *f)
 	}
 }
 
-static void	set_width(const char *format, int *i, t_sformat *f, va_list *ap)
+static void	set_width(const char *format, size_t *i, t_sformat *f, va_list *ap)
 {
 	int	nbr;
 
@@ -89,7 +90,8 @@ static void	set_width(const char *format, int *i, t_sformat *f, va_list *ap)
 	f->width = nbr;
 }
 
-static void	set_precision(const char *format, int *i, t_sformat *f, va_list *ap)
+static void	set_precision(const char *format, size_t *i, t_sformat *f, \
+							va_list *ap)
 {
 	int	nbr;
 
@@ -116,7 +118,7 @@ static void	set_precision(const char *format, int *i, t_sformat *f, va_list *ap)
 	}
 }
 
-static void	set_specifier(const char *format, int *i, t_sformat *f)
+static void	set_specifier(const char *format, size_t *i, t_sformat *f)
 {
 	char	*specifier;
 

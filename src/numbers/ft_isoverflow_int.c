@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:39:46 by ldulling          #+#    #+#             */
-/*   Updated: 2024/05/21 19:00:00 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 08:04:48 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@
  */
 bool	ft_isoverflow_int(const char *nptr)
 {
-	int		i;
-	char	*int_max;
-	int		int_max_len;
-	int		num_len;
+	unsigned int	i;
+	char			*int_max;
+	unsigned int	int_max_len;
+	unsigned int	num_len;
 
 	i = 0;
 	while (nptr[i] && ft_strchr(WHITESPACE, nptr[i]))

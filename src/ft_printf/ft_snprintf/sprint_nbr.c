@@ -6,23 +6,23 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:47:13 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:44:43 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-static int	nbrlen(long nbr, t_sformat *f);
-static int	fullnbrlen(long nbr, int len_nbr, t_sformat *f);
-static void	sprint_prefix(long nbr, t_sformat *f);
-static void	sprint_nbr_in_correct_base(long nbr, t_sformat *f);
+static unsigned int	nbrlen(long nbr, t_sformat *f);
+static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_sformat *f);
+static void			sprint_prefix(long nbr, t_sformat *f);
+static void			sprint_nbr_in_correct_base(long nbr, t_sformat *f);
 
 void	sprint_nbr(long nbr, t_sformat *f)
 {
-	char	padding;
-	int		len_nbr;
-	int		len_full;
+	char			padding;
+	unsigned int	len_nbr;
+	unsigned int	len_full;
 
 	padding = ' ';
 	if (f->zero && !f->minus && f->precision < 0)
@@ -37,7 +37,7 @@ void	sprint_nbr(long nbr, t_sformat *f)
 	if (padding == ' ' && f->specifier != 'u'
 		&& !(nbr == 0 && f->precision == 0))
 		sprint_prefix(nbr, f);
-	if (f->precision > len_nbr)
+	if (f->precision > (int)len_nbr)
 		f->sprinted += ft_sputnchar(&f->str[f->sprinted], '0',
 				max_size(f, f->precision - len_nbr));
 	if (!(nbr == 0 && f->precision == 0))
@@ -47,10 +47,10 @@ void	sprint_nbr(long nbr, t_sformat *f)
 				max_size(f, f->width - len_full));
 }
 
-static int	nbrlen(long nbr, t_sformat *f)
+static unsigned int	nbrlen(long nbr, t_sformat *f)
 {
-	int	base;
-	int	len_nbr;
+	unsigned int	base;
+	unsigned int	len_nbr;
 
 	if (ft_strchr("xX", f->specifier))
 		base = 16;
@@ -70,12 +70,12 @@ static int	nbrlen(long nbr, t_sformat *f)
 	return (len_nbr);
 }
 
-static int	fullnbrlen(long nbr, int len_nbr, t_sformat *f)
+static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_sformat *f)
 {
-	int	len_full;
+	unsigned int	len_full;
 
 	len_full = len_nbr;
-	if (len_nbr < f->precision)
+	if ((int)len_nbr < f->precision)
 		len_full = f->precision;
 	if (!ft_strchr("uxX", f->specifier))
 		if (!(nbr == 0 && f->precision == 0))

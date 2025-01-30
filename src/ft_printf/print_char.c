@@ -6,16 +6,16 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:51 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:47:54 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 06:57:23 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-int	print_char(unsigned char c, t_format *f)
+unsigned int	print_char(unsigned char c, t_format *f)
 {
-	int	printed;
+	unsigned int	printed;
 
 	printed = 0;
 	if (!f->minus && f->width > 1)

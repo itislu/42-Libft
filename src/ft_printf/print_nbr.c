@@ -6,24 +6,24 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:47:59 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:43:23 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-static int	nbrlen(long nbr, t_format *f);
-static int	fullnbrlen(long nbr, int len_nbr, t_format *f);
-static int	print_prefix(long nbr, t_format *f);
-static int	print_nbr_in_correct_base(long nbr, t_format *f);
+static unsigned int	nbrlen(long nbr, t_format *f);
+static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_format *f);
+static unsigned int	print_prefix(long nbr, t_format *f);
+static unsigned int	print_nbr_in_correct_base(long nbr, t_format *f);
 
-int	print_nbr(long nbr, t_format *f)
+unsigned int	print_nbr(long nbr, t_format *f)
 {
-	char	padding;
-	int		len_nbr;
-	int		len_full;
-	int		printed;
+	char			padding;
+	unsigned int	len_nbr;
+	unsigned int	len_full;
+	unsigned int	printed;
 
 	padding = ' ';
 	if (f->zero && !f->minus && f->precision < 0)
@@ -38,7 +38,7 @@ int	print_nbr(long nbr, t_format *f)
 	if (padding == ' ' && f->specifier != 'u'
 		&& !(nbr == 0 && f->precision == 0))
 		printed += print_prefix(nbr, f);
-	if (f->precision > len_nbr)
+	if (f->precision > (int)len_nbr)
 		printed += ft_putnchar_fd('0', f->precision - len_nbr, f->fd);
 	if (!(nbr == 0 && f->precision == 0))
 		printed += print_nbr_in_correct_base(nbr, f);
@@ -47,10 +47,10 @@ int	print_nbr(long nbr, t_format *f)
 	return (printed);
 }
 
-static int	nbrlen(long nbr, t_format *f)
+static unsigned int	nbrlen(long nbr, t_format *f)
 {
-	int	base;
-	int	len_nbr;
+	unsigned int	base;
+	unsigned int	len_nbr;
 
 	if (ft_strchr("xX", f->specifier))
 		base = 16;
@@ -70,12 +70,12 @@ static int	nbrlen(long nbr, t_format *f)
 	return (len_nbr);
 }
 
-static int	fullnbrlen(long nbr, int len_nbr, t_format *f)
+static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_format *f)
 {
-	int	len_full;
+	unsigned int	len_full;
 
 	len_full = len_nbr;
-	if (len_nbr < f->precision)
+	if ((int)len_nbr < f->precision)
 		len_full = f->precision;
 	if (!ft_strchr("uxX", f->specifier))
 		if (!(nbr == 0 && f->precision == 0))
@@ -87,9 +87,9 @@ static int	fullnbrlen(long nbr, int len_nbr, t_format *f)
 	return (len_full);
 }
 
-static int	print_prefix(long nbr, t_format *f)
+static unsigned int	print_prefix(long nbr, t_format *f)
 {
-	int	printed;
+	unsigned int	printed;
 
 	printed = 0;
 	if (ft_strchr("xX", f->specifier))
@@ -114,9 +114,9 @@ static int	print_prefix(long nbr, t_format *f)
 	return (printed);
 }
 
-static int	print_nbr_in_correct_base(long nbr, t_format *f)
+static unsigned int	print_nbr_in_correct_base(long nbr, t_format *f)
 {
-	int	printed;
+	unsigned int	printed;
 
 	printed = 0;
 	if (f->specifier == 'x')
