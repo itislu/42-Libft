@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 12:48:32 by ldulling          #+#    #+#              #
-#    Updated: 2025/01/10 16:51:36 by ldulling         ###   ########.fr        #
+#    Updated: 2025/01/30 11:31:10 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ DEP				:=	$(SRC:%.c=$D%.d)
 OBJ_SUBDIRS		:=	$(sort $(dir $(OBJ)))
 DEP_SUBDIRS		:=	$(sort $(dir $(DEP)))
 
-.PHONY			:	all cleandep cleanobj clean fclean re debug norm
+.PHONY			:	all cleandep cleanobj clean fclean re debug docs norm
 
 all				:	$(NAME)
 
@@ -93,6 +93,11 @@ re				:	fclean all
 
 debug			:	CFLAGS += $(DEBUGFLAGS)
 debug			:	re
+
+# Checks for documentation errors in the source code, like outdated names.
+# Only supported by clang.
+docs			:	CFLAGS += -Wdocumentation
+docs			:	re
 
 norm			:
 	@				-norminette -R CheckForbiddenSourceHeader -R CheckDefine \
