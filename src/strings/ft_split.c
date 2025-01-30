@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:30:36 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 08:21:34 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	**ft_split(char const *s, char c)
 		len = strclen(s, &pos, c);
 		str_array[i] = protected_malloc(str_array, i, len + 1);
 		if (str_array[i] == NULL)
-			return (free(str_array), NULL);
+			return (free((void *)str_array), (char **) NULL);
 		str_array[i] = ft_memcpy(str_array[i], &s[pos - len], len);
 		str_array[i][len] = '\0';
 		i++;
