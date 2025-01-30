@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 07:30:20 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:30:26 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int	ft_vsnprintf(char *str, size_t size, const char *format, va_list ap)
 	va_list		ap_copy;
 
 	if (!check_args(str, size, format, &f))
-		return (return_value(&f));
+		return (return_value(f.sprinted));
 	f.str = str;
 	f.size = size - 1;
-	va_copy(ap_copy, ap);
 	f.unresolved = false;
 	f.sprinted = 0;
 	i = 0;
+	va_copy(ap_copy, ap);
 	while (format[i] && f.sprinted < f.size)
 	{
 		reset_sformat(&f);
@@ -36,7 +36,8 @@ int	ft_vsnprintf(char *str, size_t size, const char *format, va_list ap)
 		if (f.sprinted == SIZE_MAX)
 			break ;
 	}
+	va_end(ap);
 	if (f.sprinted != SIZE_MAX)
 		f.str[f.sprinted] = '\0';
-	return (va_end(ap_copy), return_value(&f));
+	return (return_value(f.sprinted));
 }

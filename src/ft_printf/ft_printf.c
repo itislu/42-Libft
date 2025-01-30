@@ -6,40 +6,41 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 07:27:47 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:27:55 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <errno.h>
 #include <stdarg.h>
 #include <stddef.h>
 #include <unistd.h>
 
 int	ft_printf(const char *format, ...)
 {
+	int			errno_cpy;
 	int			i;
-	int			printed;
-	int			temp;
+	size_t		printed;
 	t_format	f;
 	va_list		ap;
 
 	if (format == NULL)
 		return (-1);
+	errno_cpy = errno;
+	errno = 0;
 	f.fd = STDOUT_FILENO;
-	va_start(ap, format);
 	f.unresolved = false;
 	printed = 0;
 	i = 0;
-	while (format[i])
+	va_start(ap, format);
+	while (format[i] && errno == 0)
 	{
 		reset_format(&f);
-		temp = parseandprint(format, &i, &f, &ap);
-		if (temp == -1)
-		{
-			printed = temp;
-			break ;
-		}
-		printed += temp;
+		printed += parseandprint(format, &i, &f, &ap);
 	}
-	return (va_end(ap), printed);
+	va_end(ap);
+	if (errno != 0)
+		return (-1);
+	errno = errno_cpy;
+	return (return_value(printed));
 }

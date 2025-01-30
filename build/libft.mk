@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2025/01/29 15:25:09 by ldulling         ###   ########.fr        #
+#    Updated: 2025/01/29 18:27:11 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC		+=	$(addprefix $(DIR), \
 			print_parsed.c \
 			print_ptr.c \
 			print_str.c \
+			return_value.c \
 			set_format.c \
 )
 
@@ -50,7 +51,6 @@ SRC		+=	$(addprefix $(DIR), \
 			ft_vsnprintf.c \
 			max_size.c \
 			parseandsprint.c \
-			return_value.c \
 			sprint_char.c \
 			sprint_nbr.c \
 			sprint_parsed.c \

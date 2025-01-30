@@ -85,7 +85,10 @@ void	sprint_ptr(size_t ptr, t_sformat *f);
 void	sprint_str(const char *str, t_sformat *f);
 size_t	max_size(t_sformat *f, size_t size);
 void	reset_sformat(t_sformat *f);
-int		return_value(t_sformat *f);
 int		set_sformat(const char *format, int *i, t_sformat *f, va_list *ap);
+
+\
+/* shared */
+int		return_value(size_t printed);
 
 #endif
