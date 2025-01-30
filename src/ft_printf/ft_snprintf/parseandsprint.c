@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:38:15 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 18:31:30 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ void	sprint_argument(t_sformat *f, va_list *ap)
 
 void	reset_sformat(t_sformat *f)
 {
-	f->hash = 0;
-	f->plus = 0;
-	f->space = 0;
+	f->hash = false;
+	f->plus = false;
+	f->space = false;
 	f->minus = 0;
-	f->zero = 0;
+	f->zero = false;
 	f->width = 0;
 	f->precision = NO_PRECISION_SET;
 	f->specifier = '\0';

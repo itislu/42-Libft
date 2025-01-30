@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:08 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 15:26:21 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 18:24:24 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,29 @@
 
 typedef struct s_format
 {
-	int		hash;
-	int		plus;
-	int		space;
+	bool	hash;
+	bool	plus;
+	bool	space;
 	int		minus;
-	int		zero;
+	bool	zero;
 	int		width;
 	int		precision;
 	char	specifier;
-	int		unresolved;
+	bool	unresolved;
 	int		fd;
 }	t_format;
 
 typedef struct s_sformat
 {
-	int		hash;
-	int		plus;
-	int		space;
+	bool	hash;
+	bool	plus;
+	bool	space;
 	int		minus;
-	int		zero;
+	bool	zero;
 	int		width;
 	int		precision;
 	char	specifier;
-	int		unresolved;
+	bool	unresolved;
 	char	*str;
 	size_t	size;
 	size_t	sprinted;

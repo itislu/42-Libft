@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:38:27 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:21:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ int	print_argument(t_format *f, va_list *ap)
 
 void	reset_format(t_format *f)
 {
-	f->hash = 0;
-	f->plus = 0;
-	f->space = 0;
+	f->hash = false;
+	f->plus = false;
+	f->space = false;
 	f->minus = 0;
-	f->zero = 0;
+	f->zero = false;
 	f->width = 0;
 	f->precision = NO_PRECISION_SET;
 	f->specifier = '\0';

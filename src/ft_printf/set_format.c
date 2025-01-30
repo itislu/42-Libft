@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:21 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:02:42 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:21:17 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ int	set_format(const char *format, int *i, t_format *f, va_list *ap)
 
 static void	set_flags(const char *format, int *i, t_format *f)
 {
-	while (1)
+	while (true)
 	{
 		if (format[*i] == '#')
-			f->hash = 1;
+			f->hash = true;
 		else if (format[*i] == '+')
-			f->plus = 1;
+			f->plus = true;
 		else if (format[*i] == ' ')
-			f->space = 1;
+			f->space = true;
 		else if (format[*i] == '-')
 			f->minus = 1;
 		else if (format[*i] == '0')
-			f->zero = 1;
+			f->zero = true;
 		else
 			return ;
 		(*i)++;
@@ -126,5 +126,5 @@ static void	set_specifier(const char *format, int *i, t_format *f)
 		(*i)++;
 	}
 	else
-		f->unresolved = 1;
+		f->unresolved = true;
 }

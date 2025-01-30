@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:59:56 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:28:13 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_dprintf(int fd, const char *format, ...)
 		return (-1);
 	f.fd = fd;
 	va_start(ap, format);
-	f.unresolved = 0;
+	f.unresolved = false;
 	printed = 0;
 	i = 0;
 	while (format[i])
