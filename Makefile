@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 12:48:32 by ldulling          #+#    #+#              #
-#    Updated: 2025/01/30 11:31:10 by ldulling         ###   ########.fr        #
+#    Updated: 2025/01/31 14:05:14 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SOURCELISTS		:=	libft.mk
 
 # Flags:
 CC				?=	cc
-CFLAGS			?=	-Wall -Wextra -Werror
+CFLAGS			?=	-Wall -Wextra -Werror -pedantic
 INCFLAGS		:=	$(addprefix -I,$I)
 DEBUGFLAGS		:=	-g
 ARFLAGS			:=	rcs
