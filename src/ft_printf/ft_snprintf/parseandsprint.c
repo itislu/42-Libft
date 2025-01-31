@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 06:49:20 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:29:25 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "_ft_snprintf.h"
+#include "../_ft_printf_shared.h"
 #include "libft.h"
 #include <stdarg.h>
 #include <stddef.h>

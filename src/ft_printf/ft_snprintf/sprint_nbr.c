@@ -6,11 +6,11 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 14:27:00 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:36:11 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "_ft_snprintf.h"
 #include "libft.h"
 
 static unsigned int	nbrlen(long nbr, t_sformat *f);
@@ -20,31 +20,26 @@ static void			sprint_nbr_in_correct_base(long nbr, t_sformat *f);
 
 void	sprint_nbr(long nbr, t_sformat *f)
 {
+	unsigned int	len_nbr = nbrlen(nbr, f);
+	unsigned int	len_full = fullnbrlen(nbr, len_nbr, f);
 	char			padding;
-	unsigned int	len_nbr;
-	unsigned int	len_full;
-
-	padding = ' ';
-	if (f->zero && !f->minus && f->precision < 0)
-		padding = '0';
+	
 	len_nbr = nbrlen(nbr, f);
 	len_full = fullnbrlen(nbr, len_nbr, f);
+	if (f->zero && !f->minus && f->precision < 0)
+		padding = '0';
+	else
+		padding = ' ';
 	if (padding == '0' && f->specifier != 'u')
 		sprint_prefix(nbr, f);
-	if (!f->minus && f->width > len_full)
-		f->sprinted += ft_sputnchar(&f->str[f->sprinted], padding,
-				max_size(f, f->width - len_full));
+	sprint_nbr_padding_left(f, padding, len_full);
 	if (padding == ' ' && f->specifier != 'u'
 		&& !(nbr == 0 && f->precision == 0))
 		sprint_prefix(nbr, f);
-	if (f->precision > (int)len_nbr)
-		f->sprinted += ft_sputnchar(&f->str[f->sprinted], '0',
-				max_size(f, f->precision - len_nbr));
+	sprint_nbr_zero_padding(f, len_nbr);
 	if (!(nbr == 0 && f->precision == 0))
 		sprint_nbr_in_correct_base(nbr, f);
-	if (f->minus && f->width > len_full)
-		f->sprinted += ft_sputnchar(&f->str[f->sprinted], ' ',
-				max_size(f, f->width - len_full));
+	sprint_nbr_padding_right(f, len_full);
 }
 
 static unsigned int	nbrlen(long nbr, t_sformat *f)

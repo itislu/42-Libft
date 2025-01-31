@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   _ft_printf_shared.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/05 11:45:40 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 15:28:01 by ldulling         ###   ########.fr       */
+/*   Created: 2025/01/31 15:27:27 by ldulling          #+#    #+#             */
+/*   Updated: 2025/01/31 18:25:21 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "_ft_snprintf.h"
-#include <stddef.h>
+#ifndef _FT_PRINTF_SHARED_H
+# define _FT_PRINTF_SHARED_H
 
-bool	check_args(char *str, size_t size, const char *format, t_sformat *f)
-{
-	if (format == NULL)
-	{
-		if (size > 0)
-			str[0] = '\0';
-		f->sprinted = -1;
-		return (false);
-	}
-	if (size == 0)
-	{
-		f->sprinted = 0;
-		return (false);
-	}
-	return (true);
-}
+# include <stddef.h>
+
+# define SPECIFIERS				"cspdiuxX%"
+# define FLAGS					"#+- 0"
+# define NULL_PRINTOUT_PTR		"(nil)"
+# define NULL_PRINTOUT_STR		"(null)"
+# define FROM_NEGATIVE_WIDTH	2
+# define NO_PRECISION_SET		-1
+# define NEGATIVE_PRECISION		-2
+
+int	return_value(size_t printed);
+
+#endif

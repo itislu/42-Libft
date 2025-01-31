@@ -6,15 +6,18 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 14:27:42 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:23:09 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "_ft_snprintf.h"
+#include "../_ft_printf_shared.h"
 #include "libft.h"
 #include <stddef.h>
 
 static void	sprint(const char *str, size_t len, t_sformat *f);
+static void	sprint_str_padding_left(t_sformat *f, size_t len);
+static void	sprint_str_padding_right(t_sformat *f, size_t len);
 
 void	sprint_str(const char *str, t_sformat *f)
 {
@@ -38,10 +41,20 @@ void	sprint_str(const char *str, t_sformat *f)
 
 static void	sprint(const char *str, size_t len, t_sformat *f)
 {
+	sprint_str_padding_left(f, len);
+	f->sprinted += ft_sputnstr(&f->str[f->sprinted], str, max_size(f, len));
+	sprint_str_padding_right(f, len);
+}
+
+static void	sprint_str_padding_left(t_sformat *f, size_t len)
+{
 	if (!f->minus && f->width > len)
 		f->sprinted += ft_sputnchar(&f->str[f->sprinted], ' ',
 				max_size(f, f->width - len));
-	f->sprinted += ft_sputnstr(&f->str[f->sprinted], str, max_size(f, len));
+}
+
+static void	sprint_str_padding_right(t_sformat *f, size_t len)
+{
 	if (f->minus && f->width > len)
 		f->sprinted += ft_sputnchar(&f->str[f->sprinted], ' ',
 				max_size(f, f->width - len));

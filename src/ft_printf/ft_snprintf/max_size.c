@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_max_size.c                                     :+:      :+:    :+:   */
+/*   max_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 01:20:35 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:58:36 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:28:10 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "_ft_snprintf.h"
 #include <stddef.h>
 
 size_t	max_size(t_sformat *f, size_t size)

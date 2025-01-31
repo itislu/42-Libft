@@ -6,11 +6,11 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 14:27:53 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:08:32 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "_ft_printf.h"
 #include "libft.h"
 
 static unsigned int	nbrlen(long nbr, t_format *f);
@@ -20,30 +20,28 @@ static unsigned int	print_nbr_in_correct_base(long nbr, t_format *f);
 
 unsigned int	print_nbr(long nbr, t_format *f)
 {
-	char			padding;
 	unsigned int	len_nbr;
 	unsigned int	len_full;
+	char			padding;
 	unsigned int	printed;
 
-	padding = ' ';
-	if (f->zero && !f->minus && f->precision < 0)
-		padding = '0';
 	len_nbr = nbrlen(nbr, f);
 	len_full = fullnbrlen(nbr, len_nbr, f);
+	if (f->zero && !f->minus && f->precision < 0)
+		padding = '0';
+	else
+		padding = ' ';
 	printed = 0;
 	if (padding == '0' && f->specifier != 'u')
 		printed += print_prefix(nbr, f);
-	if (!f->minus && f->width > len_full)
-		printed += ft_putnchar_fd(padding, f->width - len_full, f->fd);
+	printed += print_nbr_padding_left(f, padding, len_full);
 	if (padding == ' ' && f->specifier != 'u'
 		&& !(nbr == 0 && f->precision == 0))
 		printed += print_prefix(nbr, f);
-	if (f->precision > (int)len_nbr)
-		printed += ft_putnchar_fd('0', f->precision - len_nbr, f->fd);
+	printed += print_nbr_zero_padding(f, len_nbr);
 	if (!(nbr == 0 && f->precision == 0))
 		printed += print_nbr_in_correct_base(nbr, f);
-	if (f->minus && f->width > len_full)
-		printed += ft_putnchar_fd(' ', f->width - len_full, f->fd);
+	printed += print_nbr_padding_right(f, len_full);
 	return (printed);
 }
 
