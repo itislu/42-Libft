@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 07:05:32 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:28:20 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	print_str(const char *str, t_format *f)
 	printed = 0;
 	if (!str)
 	{
-		len = ft_strlen(NULL_PRINTOUT_STR);
+		len = sizeof(NULL_PRINTOUT_STR) - 1;
 		if (f->precision >= 0 && len > (size_t)f->precision)
 			len = 0;
 		printed += print(NULL_PRINTOUT_STR, len, f);

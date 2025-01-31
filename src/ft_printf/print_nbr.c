@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 07:43:23 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:27:53 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_format *f)
 				len_full++;
 	if (ft_strchr("xX", f->specifier))
 		if (f->hash && nbr != 0)
-			len_full += ft_strlen("0x");
+			len_full += sizeof("0x") - 1;
 	return (len_full);
 }
 

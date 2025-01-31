@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:12 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 07:04:29 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:28:00 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static unsigned int	print_nullptr(t_format *f)
 	unsigned int	len;
 	unsigned int	printed;
 
-	len = ft_strlen(NULL_PRINTOUT_PTR);
+	len = sizeof(NULL_PRINTOUT_PTR) - 1;
 	printed = 0;
 	if (!f->minus && f->width > len)
 		printed += ft_putnchar_fd(' ', f->width - len, f->fd);
@@ -84,7 +84,7 @@ static unsigned int	fullptrlen(unsigned int len_ptr, t_format *f)
 		len_full = f->precision;
 	if (f->plus || f->space)
 		len_full++;
-	len_full += ft_strlen("0x");
+	len_full += sizeof("0x") - 1;
 	return (len_full);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 16:44:54 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:27:42 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sprint_str(const char *str, t_sformat *f)
 
 	if (!str)
 	{
-		len = ft_strlen(NULL_PRINTOUT_STR);
+		len = sizeof(NULL_PRINTOUT_STR) - 1;
 		if (f->precision >= 0 && len > (size_t)f->precision)
 			len = 0;
 		sprint(NULL_PRINTOUT_STR, len, f);
