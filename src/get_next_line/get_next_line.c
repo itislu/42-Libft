@@ -6,11 +6,11 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 15:06:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:30:24 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:31:33 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "_get_next_line.h"
 #include <bits/posix1_lim.h>
 #include <limits.h>
 #include <stdlib.h>
