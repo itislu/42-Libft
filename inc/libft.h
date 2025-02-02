@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:17:46 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 09:57:28 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/02 14:16:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ char		*ft_strchr(const char *s, int c);
 int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strdel_sequence(const char *str, const char *sequence);
 char		*ft_strdup(const char *s);
-int			ft_strisdigits(const char *s);
+bool		ft_strisdigits(const char *s);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strjoin(char const *s1, char const *s2);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
