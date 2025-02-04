@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:21 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 18:26:30 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 20:11:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,27 +95,26 @@ static void	set_precision(const char *format, size_t *i, t_sformat *f, \
 {
 	int	nbr;
 
-	if (format[*i] == '.')
+	if (format[*i] != '.')
+		return ;
+	nbr = 0;
+	(*i)++;
+	if (format[*i] == '*')
 	{
-		nbr = 0;
+		nbr = va_arg(*ap, int);
+		if (nbr < 0)
+			nbr = NEGATIVE_PRECISION;
 		(*i)++;
-		if (format[*i] == '*')
+	}
+	else
+	{
+		while (ft_isdigit(format[*i]))
 		{
-			nbr = va_arg(*ap, int);
-			if (nbr < 0)
-				nbr = NEGATIVE_PRECISION;
+			nbr = nbr * 10 + (format[*i] - '0');
 			(*i)++;
 		}
-		else
-		{
-			while (ft_isdigit(format[*i]))
-			{
-				nbr = nbr * 10 + (format[*i] - '0');
-				(*i)++;
-			}
-		}
-		f->precision = nbr;
 	}
+	f->precision = nbr;
 }
 
 static void	set_specifier(const char *format, size_t *i, t_sformat *f)

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 15:06:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 20:21:30 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 20:21:50 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,25 +53,23 @@ static int	check_for_full_leftover_line(t_buf **head, char **result)
 	ssize_t			i;
 	ssize_t			result_size;
 
-	if (new_line_end != NO_NL)
-	{
-		result_size = new_line_end - (*head)->line_end;
-		*result = (char *)malloc(result_size + 1);
-		if (!*result)
-			return (free_list(head), 1);
-		i = 0;
-		(*head)->line_end++;
-		while (i < result_size)
-			(*result)[i++] = (*head)->buf[(*head)->line_end++];
-		(*result)[i] = '\0';
-		(*head)->bytes_unsaved -= result_size;
-		if ((*head)->bytes_unsaved)
-			(*head)->line_end = new_line_end;
-		else
-			free_list(head);
-		return (1);
-	}
-	return (0);
+	if (new_line_end == NO_NL)
+		return (0);
+	result_size = new_line_end - (*head)->line_end;
+	*result = (char *)malloc(result_size + 1);
+	if (!*result)
+		return (free_list(head), 1);
+	i = 0;
+	(*head)->line_end++;
+	while (i < result_size)
+		(*result)[i++] = (*head)->buf[(*head)->line_end++];
+	(*result)[i] = '\0';
+	(*head)->bytes_unsaved -= result_size;
+	if ((*head)->bytes_unsaved)
+		(*head)->line_end = new_line_end;
+	else
+		free_list(head);
+	return (1);
 }
 
 static int	read_until_endofline(t_buf **head, int fd)

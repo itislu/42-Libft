@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 01:20:35 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 15:28:10 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:25:22 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,7 @@
 
 size_t	max_size(const t_sformat *f, size_t size)
 {
-	size_t	max_size;
-
 	if (f->sprinted + size <= f->size)
-		max_size = size;
-	else
-		max_size = f->size - f->sprinted;
-	return (max_size);
+		return (size);
+	return (f->size - f->sprinted);
 }
