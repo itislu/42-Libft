@@ -6,14 +6,14 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:16:52 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 19:02:13 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 00:41:31 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-static bool	bubble_sort(t_list **lst, \
+static bool	pass_once(t_list **lst, \
 						const void *(*cmp)(const void *, const void *));
 
 void	ft_lstsort_bubble(t_list **lst, \
@@ -24,15 +24,15 @@ void	ft_lstsort_bubble(t_list **lst, \
 	if (lst == NULL || *lst == NULL || (*lst)->next == NULL || cmp == NULL)
 		return ;
 	is_sorted = false;
-	while (is_sorted != true)
+	while (!is_sorted)
 	{
 		if (!(*cmp)((*lst)->content, (*lst)->next->content))
 			ft_lstswap_head(lst);
-		is_sorted = bubble_sort(lst, cmp);
+		is_sorted = pass_once(lst, cmp);
 	}
 }
 
-static bool	bubble_sort(t_list **lst, \
+static bool	pass_once(t_list **lst, \
 						const void *(*cmp)(const void *, const void *))
 {
 	t_list	*cur;
