@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:17:16 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 18:17:46 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:40:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 
 int	return_value(size_t printed)
 {
+	if (printed == (size_t)-1)
+	{
+		errno = EINVAL;
+		return (-1);
+	}
 	if (printed > INT_MAX)
 	{
 		errno = EOVERFLOW;

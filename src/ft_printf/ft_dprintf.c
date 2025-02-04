@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 15:33:34 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:34:10 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	ft_dprintf(int fd, const char *format, ...)
 	t_format	f;
 	va_list		ap;
 
-	if (format == NULL || fd < 0)
-		return (-1);
+	if (format == NULL)
+		return (return_value(-1));
 	errno_cpy = errno;
 	errno = 0;
 	f.fd = fd;

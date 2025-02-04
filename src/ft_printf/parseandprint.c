@@ -6,13 +6,14 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 15:33:41 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:36:36 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "_ft_printf.h"
 #include "_ft_printf_shared.h"
 #include "libft.h"
+#include <errno.h>
 #include <stdarg.h>
 #include <stddef.h>
 
@@ -27,7 +28,10 @@ size_t	parseandprint(const char *format, size_t *i, t_format *f, va_list *ap)
 	{
 		parsed += set_format(format, i, f, ap);
 		if (format[*i] == '\0' && !f->specifier && !f->unresolved)
-			return (-1);
+		{
+			errno = EINVAL;
+			return (printed);
+		}
 		if (f->specifier)
 			printed += print_argument(f, ap);
 	}

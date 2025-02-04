@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 15:30:24 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:38:42 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "../_ft_printf_shared.h"
 #include <stdarg.h>
 #include <stddef.h>
-#include <stdint.h>
 
 int	ft_snprintf(char *str, size_t size, const char *format, ...)
 {
@@ -34,11 +33,9 @@ int	ft_snprintf(char *str, size_t size, const char *format, ...)
 	{
 		reset_sformat(&f);
 		parseandsprint(format, &i, &f, &ap);
-		if (f.sprinted == SIZE_MAX)
-			break ;
 	}
 	va_end(ap);
-	if (f.sprinted != SIZE_MAX)
+	if (f.sprinted != (size_t)-1)
 		f.str[f.sprinted] = '\0';
 	return (return_value(f.sprinted));
 }
