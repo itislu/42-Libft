@@ -6,16 +6,21 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 15:06:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 18:31:33 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:18:42 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
 #include "_get_next_line.h"
 #include <bits/posix1_lim.h>
 #include <limits.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
+
+static int	check_for_full_leftover_line(t_buf **head, char **result);
+static int	read_until_endofline(t_buf **head, int fd);
+static char	*copy_into_result_and_move_head_to_tail(t_buf **head);
 
 char	*get_next_line(int fd)
 {
@@ -42,7 +47,7 @@ char	*get_next_line(int fd)
 	return (result);
 }
 
-int	check_for_full_leftover_line(t_buf **head, char **result)
+static int	check_for_full_leftover_line(t_buf **head, char **result)
 {
 	ssize_t	i;
 	ssize_t	new_line_end;
@@ -70,7 +75,7 @@ int	check_for_full_leftover_line(t_buf **head, char **result)
 	return (0);
 }
 
-int	read_until_endofline(t_buf **head, int fd)
+static int	read_until_endofline(t_buf **head, int fd)
 {
 	t_buf	*cur;
 
@@ -95,7 +100,7 @@ int	read_until_endofline(t_buf **head, int fd)
 	return (1);
 }
 
-char	*copy_into_result_and_move_head_to_tail(t_buf **head)
+static char	*copy_into_result_and_move_head_to_tail(t_buf **head)
 {
 	t_buf	*cur;
 	char	*result;

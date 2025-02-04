@@ -6,19 +6,20 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 02:20:16 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:39:23 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:12:36 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-static size_t	get_base_len(const char *base);
-static bool		check_for_duplicate(const char *base, size_t base_len);
-unsigned long	truncate_nbr_if_needed(unsigned long nbr, size_t base_len, \
-										size_t max_len);
-static size_t	sprint(char *str, unsigned long u_n, const char *base, \
-						size_t base_len);
+static size_t			get_base_len(const char *base);
+static bool				check_for_duplicate(const char *base, size_t base_len);
+static unsigned long	truncate_nbr_if_needed(unsigned long nbr, \
+												size_t base_len, \
+												size_t max_len);
+static size_t			sprint(char *str, unsigned long u_n, const char *base, \
+								size_t base_len);
 
 size_t	ft_snputnbr_base(char *str, long n, const char *base, size_t max_len)
 {
@@ -81,8 +82,8 @@ static bool	check_for_duplicate(const char *base, size_t base_len)
 	return (false);
 }
 
-unsigned long	truncate_nbr_if_needed(unsigned long nbr, size_t base_len, \
-										size_t max_len)
+static unsigned long	truncate_nbr_if_needed(unsigned long nbr, \
+												size_t base_len, size_t max_len)
 {
 	size_t			nbr_len;
 	unsigned long	tmp;

@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:27:22 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 18:31:37 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:09:54 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "_get_next_line.h"
+#include "get_next_line.h"
 #include <stdlib.h>
 #include <sys/types.h>
 

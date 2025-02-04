@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:27:59 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 18:31:25 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:17:49 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ typedef struct s_buf
 	struct s_buf	*next;
 }	t_buf;
 
-int		check_for_full_leftover_line(t_buf **head, char **result);
-int		read_until_endofline(t_buf **head, int fd);
-char	*copy_into_result_and_move_head_to_tail(t_buf **head);
 int		add_new_node(t_buf *cur);
 size_t	count_result_size(t_buf *cur);
 ssize_t	find_endofline(t_buf *cur);
