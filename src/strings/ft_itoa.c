@@ -6,19 +6,19 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:04:05 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 21:32:15 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 22:16:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int	count_digits(int n);
-static void	convert(long n, char *s, int char_count);
+static unsigned int	count_digits(int n);
+static void			convert(long n, char *s, unsigned int char_count);
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	int		char_count;
+	char			*s;
+	unsigned int	char_count;
 
 	char_count = count_digits(n);
 	if (n < 0)
@@ -30,9 +30,9 @@ char	*ft_itoa(int n)
 	return (s);
 }
 
-static int	count_digits(int n)
+static unsigned int	count_digits(int n)
 {
-	int	char_count;
+	unsigned int	char_count;
 
 	if (n == 0)
 		return (1);
@@ -45,7 +45,7 @@ static int	count_digits(int n)
 	return (char_count);
 }
 
-static void	convert(long n, char *s, int char_count)
+static void	convert(long n, char *s, unsigned int char_count)
 {
 	s[char_count--] = '\0';
 	if (n == 0)
