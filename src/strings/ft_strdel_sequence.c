@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:30:19 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:16:02 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 20:54:54 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
  */
 char	*ft_strdel_sequence(const char *str, const char *sequence)
 {
-	char	*occurance;
+	char	*occurrence;
 	char	*result;
 	size_t	seq_len;
 	char	*tmp;
@@ -43,12 +43,12 @@ char	*ft_strdel_sequence(const char *str, const char *sequence)
 	if (!sequence || !*sequence)
 		return (tmp);
 	seq_len = ft_strlen(sequence);
-	occurance = ft_strnstr(tmp, sequence, ft_strlen(tmp));
-	while (occurance)
+	occurrence = ft_strnstr(tmp, sequence, ft_strlen(tmp));
+	while (occurrence)
 	{
-		unsearched_len = ft_strlen(occurance + seq_len);
-		ft_memmove(occurance, occurance + seq_len, unsearched_len + 1);
-		occurance = ft_strnstr(occurance, sequence, unsearched_len);
+		unsearched_len = ft_strlen(occurrence + seq_len);
+		ft_memmove(occurrence, occurrence + seq_len, unsearched_len + 1);
+		occurrence = ft_strnstr(occurrence, sequence, unsearched_len);
 	}
 	result = ft_strdup(tmp);
 	free(tmp);
