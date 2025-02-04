@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:17:46 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 20:02:59 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 23:42:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ void		*ft_memset(void *s, int c, size_t n);
 double		ft_atof(const char *nptr);
 int			ft_atoi(const char *nptr);
 long		ft_atol(const char *nptr);
+bool		ft_inrange_mul_u(size_t a, size_t b, size_t max);
 bool		ft_iseven(int value);
 bool		ft_isodd(int value);
 bool		ft_isoverflow_int(const char *nptr);
