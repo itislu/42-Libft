@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 15:06:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 18:18:42 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 20:21:30 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,10 @@ char	*get_next_line(int fd)
 
 static int	check_for_full_leftover_line(t_buf **head, char **result)
 {
-	ssize_t	i;
-	ssize_t	new_line_end;
-	ssize_t	result_size;
+	const ssize_t	new_line_end = find_endofline(*head);
+	ssize_t			i;
+	ssize_t			result_size;
 
-	new_line_end = find_endofline(*head);
 	if (new_line_end != NO_NL)
 	{
 		result_size = new_line_end - (*head)->line_end;

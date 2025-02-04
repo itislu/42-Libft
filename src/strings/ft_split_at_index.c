@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:00:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 08:23:48 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:37:08 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
  *                 memory allocation fails, it returns NULL.
  *
  */
-char	**ft_split_at_index(char *str, size_t index)
+char	**ft_split_at_index(const char *str, size_t index)
 {
 	size_t	len;
 	char	**str_array;

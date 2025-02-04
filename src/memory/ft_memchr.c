@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:08:13 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:53:25 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:50:28 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char	*casted_ptr_s;
-	unsigned char		casted_c;
+	const unsigned char	*casted_ptr_s = (const unsigned char *)s;
+	const unsigned char	casted_c = (unsigned char)c;
 	size_t				i;
 
-	casted_ptr_s = (const unsigned char *)s;
-	casted_c = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{

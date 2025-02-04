@@ -6,16 +6,18 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:16:52 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:10:19 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:02:13 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-static bool	bubble_sort(t_list **lst, void *(*cmp)(void *, void *));
+static bool	bubble_sort(t_list **lst, \
+						const void *(*cmp)(const void *, const void *));
 
-void	ft_lstsort_bubble(t_list **lst, void *(*cmp)(void *, void *))
+void	ft_lstsort_bubble(t_list **lst, \
+							const void *(*cmp)(const void *, const void *))
 {
 	bool	is_sorted;
 
@@ -30,7 +32,8 @@ void	ft_lstsort_bubble(t_list **lst, void *(*cmp)(void *, void *))
 	}
 }
 
-static bool	bubble_sort(t_list **lst, void *(*cmp)(void *, void *))
+static bool	bubble_sort(t_list **lst, \
+						const void *(*cmp)(const void *, const void *))
 {
 	t_list	*cur;
 	t_list	*prev;

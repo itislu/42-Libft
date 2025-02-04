@@ -6,27 +6,26 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 18:08:32 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:02:46 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "_ft_printf.h"
 #include "libft.h"
 
-static unsigned int	nbrlen(long nbr, t_format *f);
-static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_format *f);
-static unsigned int	print_prefix(long nbr, t_format *f);
-static unsigned int	print_nbr_in_correct_base(long nbr, t_format *f);
+static unsigned int	nbrlen(long nbr, const t_format *f);
+static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, \
+								const t_format *f);
+static unsigned int	print_prefix(long nbr, const t_format *f);
+static unsigned int	print_nbr_in_correct_base(long nbr, const t_format *f);
 
-unsigned int	print_nbr(long nbr, t_format *f)
+unsigned int	print_nbr(long nbr, const t_format *f)
 {
-	unsigned int	len_nbr;
-	unsigned int	len_full;
-	char			padding;
-	unsigned int	printed;
+	const unsigned int	len_nbr = nbrlen(nbr, f);
+	const unsigned int	len_full = fullnbrlen(nbr, len_nbr, f);
+	char				padding;
+	unsigned int		printed;
 
-	len_nbr = nbrlen(nbr, f);
-	len_full = fullnbrlen(nbr, len_nbr, f);
 	if (f->zero && !f->minus && f->precision < 0)
 		padding = '0';
 	else
@@ -45,7 +44,7 @@ unsigned int	print_nbr(long nbr, t_format *f)
 	return (printed);
 }
 
-static unsigned int	nbrlen(long nbr, t_format *f)
+static unsigned int	nbrlen(long nbr, const t_format *f)
 {
 	unsigned int	base;
 	unsigned int	len_nbr;
@@ -68,7 +67,8 @@ static unsigned int	nbrlen(long nbr, t_format *f)
 	return (len_nbr);
 }
 
-static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_format *f)
+static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, \
+								const t_format *f)
 {
 	unsigned int	len_full;
 
@@ -85,7 +85,7 @@ static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_format *f)
 	return (len_full);
 }
 
-static unsigned int	print_prefix(long nbr, t_format *f)
+static unsigned int	print_prefix(long nbr, const t_format *f)
 {
 	unsigned int	printed;
 
@@ -112,7 +112,7 @@ static unsigned int	print_prefix(long nbr, t_format *f)
 	return (printed);
 }
 
-static unsigned int	print_nbr_in_correct_base(long nbr, t_format *f)
+static unsigned int	print_nbr_in_correct_base(long nbr, const t_format *f)
 {
 	unsigned int	printed;
 

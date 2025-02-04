@@ -6,23 +6,24 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:32 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:47:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 22:01:28 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char		casted_c;
+	const char	casted_c = (char)c;
 	const char	*last;
 
-	casted_c = (char)c;
 	if (casted_c == '\0')
 	{
 		while (*s)
 			s++;
 		return ((char *)s);
 	}
-	last = 0;
+	last = NULL;
 	while (*s)
 	{
 		if (*s == casted_c)

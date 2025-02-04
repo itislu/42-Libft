@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:57 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:16:29 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:48:56 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,9 @@
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	srclen;
+	const size_t	srclen = ft_strlen(src);
+	size_t			i;
 
-	srclen = ft_strlen(src);
 	if (size > 0)
 	{
 		i = 0;

@@ -6,28 +6,29 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 16:46:49 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 16:58:33 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:15:27 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "_ft_printf.h"
 #include "libft.h"
 
-unsigned int	print_ptr_padding_left(t_format *f, unsigned int len_full)
+unsigned int	print_ptr_padding_left(const t_format *f, unsigned int len_full)
 {
 	if (!f->minus && f->width > len_full && !(f->zero && f->precision < 0))
 		return (ft_putnchar_fd(' ', f->width - len_full, f->fd));
 	return (0);
 }
 
-unsigned int	print_ptr_padding_right(t_format *f, unsigned int len_full)
+unsigned int	print_ptr_padding_right(const t_format *f, \
+										unsigned int len_full)
 {
 	if (f->minus && f->width > len_full)
 		return (ft_putnchar_fd(' ', f->width - len_full, f->fd));
 	return (0);
 }
 
-unsigned int	print_ptr_prefix(t_format *f)
+unsigned int	print_ptr_prefix(const t_format *f)
 {
 	unsigned int	printed;
 
@@ -40,7 +41,8 @@ unsigned int	print_ptr_prefix(t_format *f)
 	return (printed);
 }
 
-unsigned int	print_ptr_zero_padding(t_format *f, unsigned int len_ptr, \
+unsigned int	print_ptr_zero_padding(const t_format *f, \
+										unsigned int len_ptr, \
 										unsigned int len_full)
 {
 	if (f->precision > (int)len_ptr)

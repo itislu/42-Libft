@@ -13,7 +13,7 @@
 #include "_ft_snprintf.h"
 #include <stddef.h>
 
-size_t	max_size(t_sformat *f, size_t size)
+size_t	max_size(const t_sformat *f, size_t size)
 {
 	size_t	max_size;
 

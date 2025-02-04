@@ -6,20 +6,19 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:08:06 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:10:14 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:47:55 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(const t_list *lst)
 {
-	int		n;
-	t_list	*cur;
+	const t_list	*cur = lst;
+	int				n;
 
 	n = 0;
-	cur = lst;
 	while (cur != NULL)
 	{
 		n++;

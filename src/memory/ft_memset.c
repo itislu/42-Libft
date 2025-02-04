@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:11:59 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:39:10 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:54:42 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	casted_c;
-	unsigned char	*casted_ptr_s;
-	size_t			i;
+	const unsigned char	casted_c = (unsigned char)c;
+	unsigned char		*casted_ptr_s;
+	size_t				i;
 
 	casted_ptr_s = (unsigned char *)s;
-	casted_c = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{

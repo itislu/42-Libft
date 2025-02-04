@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 01:52:32 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:10:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:55:21 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@
  * @return       The number of non-null content nodes in the list.
  *
  */
-int	ft_lstsize_non_null(t_list *lst)
+int	ft_lstsize_non_null(const t_list *lst)
 {
-	int		n;
-	t_list	*cur;
+	const t_list	*cur = lst;
+	int				n;
 
 	n = 0;
-	cur = lst;
 	while (cur != NULL)
 	{
 		if (cur->content != NULL)

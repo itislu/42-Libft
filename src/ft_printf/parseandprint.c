@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 17:36:36 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:56:26 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ size_t	parseandprint(const char *format, size_t *i, t_format *f, va_list *ap)
 	return (printed);
 }
 
-size_t	print_argument(t_format *f, va_list *ap)
+size_t	print_argument(const t_format *f, va_list *ap)
 {
 	size_t	printed;
 

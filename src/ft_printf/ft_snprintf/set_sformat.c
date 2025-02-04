@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:21 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 16:30:28 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:26:30 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ static void	set_specifier(const char *format, size_t *i, t_sformat *f);
 
 size_t	set_sformat(const char *format, size_t *i, t_sformat *f, va_list *ap)
 {
-	size_t	i_original;
+	const size_t	i_original = *i;
 
-	i_original = *i;
 	if (format[*i])
 	{
 		set_flags(format, i, f);
@@ -121,9 +120,8 @@ static void	set_precision(const char *format, size_t *i, t_sformat *f, \
 
 static void	set_specifier(const char *format, size_t *i, t_sformat *f)
 {
-	char	*specifier;
+	const char	*specifier = ft_strchr(SPECIFIERS, format[*i]);
 
-	specifier = ft_strchr(SPECIFIERS, format[*i]);
 	if (specifier)
 	{
 		f->specifier = *specifier;

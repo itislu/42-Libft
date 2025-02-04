@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:22 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:46:01 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:58:28 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,10 @@
  */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	const unsigned char	*casted_ptr_s1;
-	const unsigned char	*casted_ptr_s2;
+	const unsigned char	*casted_ptr_s1 = (const unsigned char *)s1;
+	const unsigned char	*casted_ptr_s2 = (const unsigned char *)s2;
 	size_t				i;
 
-	casted_ptr_s1 = (const unsigned char *)s1;
-	casted_ptr_s2 = (const unsigned char *)s2;
 	i = 0;
 	while (i < n)
 	{

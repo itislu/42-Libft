@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:14 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 15:33:44 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:03:39 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 #include "libft.h"
 #include <stddef.h>
 
-static size_t		print_flags(const char *format, size_t *i, t_format *f);
-static unsigned int	print_width(const char *format, size_t *i, t_format *f);
-static unsigned int	print_precision(const char *format, size_t *i, t_format *f);
+static size_t		print_flags(const char *format, size_t *i, \
+								const t_format *f);
+static unsigned int	print_width(const char *format, size_t *i, \
+								const t_format *f);
+static unsigned int	print_precision(const char *format, size_t *i, \
+									const t_format *f);
 
-size_t	print_parsed(const char *format, size_t parsed, t_format *f)
+size_t	print_parsed(const char *format, size_t parsed, const t_format *f)
 {
 	size_t	i;
 	size_t	printed;
@@ -37,7 +40,7 @@ size_t	print_parsed(const char *format, size_t parsed, t_format *f)
 	return (printed);
 }
 
-static size_t	print_flags(const char *format, size_t *i, t_format *f)
+static size_t	print_flags(const char *format, size_t *i, const t_format *f)
 {
 	size_t	printed;
 
@@ -57,7 +60,8 @@ static size_t	print_flags(const char *format, size_t *i, t_format *f)
 	return (printed);
 }
 
-static unsigned int	print_width(const char *format, size_t *i, t_format *f)
+static unsigned int	print_width(const char *format, size_t *i, \
+								const t_format *f)
 {
 	unsigned int	printed;
 
@@ -72,7 +76,8 @@ static unsigned int	print_width(const char *format, size_t *i, t_format *f)
 	return (printed);
 }
 
-static unsigned int	print_precision(const char *format, size_t *i, t_format *f)
+static unsigned int	print_precision(const char *format, size_t *i, \
+									const t_format *f)
 {
 	unsigned int	printed;
 

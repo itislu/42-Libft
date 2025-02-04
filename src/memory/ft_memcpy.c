@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:08:20 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:39:02 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 22:27:36 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,13 @@
  */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*casted_ptr_dest;
-	unsigned char	*casted_ptr_src;
-	size_t			i;
+	const unsigned char	*casted_ptr_src = (const unsigned char *)src;
+	unsigned char		*casted_ptr_dest;
+	size_t				i;
 
 	if (n)
 	{
 		casted_ptr_dest = (unsigned char *)dest;
-		casted_ptr_src = (unsigned char *)src;
 		i = 0;
 		while (i < n)
 		{

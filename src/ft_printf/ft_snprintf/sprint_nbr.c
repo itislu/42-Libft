@@ -6,26 +6,25 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 17:36:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:27:51 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "_ft_snprintf.h"
 #include "libft.h"
 
-static unsigned int	nbrlen(long nbr, t_sformat *f);
-static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_sformat *f);
+static unsigned int	nbrlen(long nbr, const t_sformat *f);
+static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, \
+								const t_sformat *f);
 static void			sprint_prefix(long nbr, t_sformat *f);
 static void			sprint_nbr_in_correct_base(long nbr, t_sformat *f);
 
 void	sprint_nbr(long nbr, t_sformat *f)
 {
-	unsigned int	len_nbr = nbrlen(nbr, f);
-	unsigned int	len_full = fullnbrlen(nbr, len_nbr, f);
-	char			padding;
-	
-	len_nbr = nbrlen(nbr, f);
-	len_full = fullnbrlen(nbr, len_nbr, f);
+	const unsigned int	len_nbr = nbrlen(nbr, f);
+	const unsigned int	len_full = fullnbrlen(nbr, len_nbr, f);
+	char				padding;
+
 	if (f->zero && !f->minus && f->precision < 0)
 		padding = '0';
 	else
@@ -42,7 +41,7 @@ void	sprint_nbr(long nbr, t_sformat *f)
 	sprint_nbr_padding_right(f, len_full);
 }
 
-static unsigned int	nbrlen(long nbr, t_sformat *f)
+static unsigned int	nbrlen(long nbr, const t_sformat *f)
 {
 	unsigned int	base;
 	unsigned int	len_nbr;
@@ -65,7 +64,8 @@ static unsigned int	nbrlen(long nbr, t_sformat *f)
 	return (len_nbr);
 }
 
-static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, t_sformat *f)
+static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, \
+								const t_sformat *f)
 {
 	unsigned int	len_full;
 

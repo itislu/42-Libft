@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:27:24 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 16:44:55 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:25:52 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	sprint_ptr_prefix(t_sformat *f);
 void	sprint_ptr_zero_padding(t_sformat *f, unsigned int len_ptr, \
 								unsigned int len_full);
 void	sprint_str(const char *str, t_sformat *f);
-size_t	max_size(t_sformat *f, size_t size);
+size_t	max_size(const t_sformat *f, size_t size);
 void	reset_sformat(t_sformat *f);
 size_t	set_sformat(const char *format, size_t *i, t_sformat *f, va_list *ap);
 

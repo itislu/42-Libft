@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 00:35:12 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:09:40 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:12:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,18 @@
  *               the list could not be duplicated.
  *
  */
-t_list	*ft_lstdup(t_list *lst, void *(*dup)(void *), void (*del)(void *))
+t_list	*ft_lstdup(const t_list *lst, void *(*dup)(const void *), \
+					void (*del)(void *))
 {
-	t_list	*cur;
-	t_list	*new_lst;
-	t_list	*new_lst_tail;
-	void	*new_content;
+	const t_list	*cur = lst;
+	t_list			*new_lst;
+	t_list			*new_lst_tail;
+	void			*new_content;
 
 	if (lst == NULL || dup == NULL || del == NULL)
 		return (NULL);
 	new_lst = NULL;
 	new_lst_tail = NULL;
-	cur = lst;
 	while (cur != NULL)
 	{
 		new_content = (*dup)(cur->content);

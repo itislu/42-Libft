@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:39:46 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 08:05:13 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:23:43 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 bool	ft_isoverflow_long(const char *nptr)
 {
 	unsigned int	i;
-	char			*long_max;
+	const char		*long_max;
 	unsigned int	long_max_len;
 	unsigned int	num_len;
 

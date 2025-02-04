@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:12 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 18:12:25 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:00:05 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,18 @@
 #include "libft.h"
 #include <stddef.h>
 
-static unsigned int	print_nullptr(t_format *f);
-static unsigned int	puthex(size_t ptr, t_format *f);
+static unsigned int	print_nullptr(const t_format *f);
+static unsigned int	puthex(size_t ptr, const t_format *f);
 static unsigned int	ptrlen(size_t ptr);
-static unsigned int	fullptrlen(unsigned int len_ptr, t_format *f);
+static unsigned int	fullptrlen(unsigned int len_ptr, const t_format *f);
 
-unsigned int	print_ptr(size_t ptr, t_format *f)
+unsigned int	print_ptr(size_t ptr, const t_format *f)
 {
-	unsigned int	len_ptr;
-	unsigned int	len_full;
+	const unsigned int	len_ptr = ptrlen(ptr);
+	const unsigned int	len_full = fullptrlen(len_ptr, f);
 
 	if (!ptr)
 		return (print_nullptr(f));
-	len_ptr = ptrlen(ptr);
-	len_full = fullptrlen(len_ptr, f);
 	return (print_ptr_padding_left(f, len_full)
 		+ print_ptr_prefix(f)
 		+ print_ptr_zero_padding(f, len_ptr, len_full)
@@ -36,12 +34,11 @@ unsigned int	print_ptr(size_t ptr, t_format *f)
 		+ print_ptr_padding_right(f, len_full));
 }
 
-static unsigned int	print_nullptr(t_format *f)
+static unsigned int	print_nullptr(const t_format *f)
 {
-	unsigned int	len;
-	unsigned int	printed;
+	const unsigned int	len = sizeof(NULL_PRINTOUT_PTR) - 1;
+	unsigned int		printed;
 
-	len = sizeof(NULL_PRINTOUT_PTR) - 1;
 	printed = 0;
 	if (!f->minus && f->width > len)
 		printed += ft_putnchar_fd(' ', f->width - len, f->fd);
@@ -51,7 +48,7 @@ static unsigned int	print_nullptr(t_format *f)
 	return (printed);
 }
 
-static unsigned int	puthex(size_t ptr, t_format *f)
+static unsigned int	puthex(size_t ptr, const t_format *f)
 {
 	unsigned int	printed;
 
@@ -79,7 +76,7 @@ static unsigned int	ptrlen(size_t ptr)
 	return (len_ptr);
 }
 
-static unsigned int	fullptrlen(unsigned int len_ptr, t_format *f)
+static unsigned int	fullptrlen(unsigned int len_ptr, const t_format *f)
 {
 	unsigned int	len_full;
 

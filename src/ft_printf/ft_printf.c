@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 17:34:06 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:53:06 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int	ft_printf(const char *format, ...)
 {
-	int			errno_cpy;
+	const int	errno_cpy = errno;
 	size_t		i;
 	size_t		printed;
 	t_format	f;
@@ -27,7 +27,6 @@ int	ft_printf(const char *format, ...)
 
 	if (format == NULL)
 		return (return_value(-1));
-	errno_cpy = errno;
 	errno = 0;
 	f.fd = STDOUT_FILENO;
 	f.unresolved = false;
