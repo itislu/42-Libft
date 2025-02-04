@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:50:45 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:16:58 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:00:22 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 
-static int	search_null_str(va_list ap, int n);
+static int	search_null(va_list *ap, int n);
 
 /**
  * The ft_strmatches_any function checks if the first string matches any of the
@@ -38,7 +38,7 @@ int	ft_strmatches_any(const char *str, int n, ...)
 
 	va_start(ap, n);
 	if (str == NULL)
-		i = search_null_str(ap, n);
+		i = search_null(&ap, n);
 	else
 	{
 		i = 0;
@@ -56,14 +56,14 @@ int	ft_strmatches_any(const char *str, int n, ...)
 	return (i + 1);
 }
 
-static int	search_null_str(va_list ap, int n)
+static int	search_null(va_list *ap, int n)
 {
 	int	i;
 
 	i = 0;
 	while (i < n)
 	{
-		if (va_arg(ap, const char *) == NULL)
+		if (va_arg(*ap, const char *) == NULL)
 			break ;
 		i++;
 	}
