@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 15:06:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 20:21:50 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:13:23 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-static int	check_for_full_leftover_line(t_buf **head, char **result);
-static int	read_until_endofline(t_buf **head, int fd);
+static bool	check_for_full_leftover_line(t_buf **head, char **result);
+static bool	read_until_endofline(t_buf **head, int fd);
 static char	*copy_into_result_and_move_head_to_tail(t_buf **head);
 
 char	*get_next_line(int fd)
@@ -47,18 +47,18 @@ char	*get_next_line(int fd)
 	return (result);
 }
 
-static int	check_for_full_leftover_line(t_buf **head, char **result)
+static bool	check_for_full_leftover_line(t_buf **head, char **result)
 {
 	const ssize_t	new_line_end = find_endofline(*head);
 	ssize_t			i;
 	ssize_t			result_size;
 
 	if (new_line_end == NO_NL)
-		return (0);
+		return (false);
 	result_size = new_line_end - (*head)->line_end;
 	*result = (char *)malloc(result_size + 1);
 	if (!*result)
-		return (free_list(head), 1);
+		return (free_list(head), true);
 	i = 0;
 	(*head)->line_end++;
 	while (i < result_size)
@@ -69,10 +69,10 @@ static int	check_for_full_leftover_line(t_buf **head, char **result)
 		(*head)->line_end = new_line_end;
 	else
 		free_list(head);
-	return (1);
+	return (true);
 }
 
-static int	read_until_endofline(t_buf **head, int fd)
+static bool	read_until_endofline(t_buf **head, int fd)
 {
 	t_buf	*cur;
 
@@ -84,17 +84,17 @@ static int	read_until_endofline(t_buf **head, int fd)
 	{
 		cur->bytes_unsaved = read(fd, cur->buf, BUFFER_SIZE);
 		if (cur->bytes_unsaved == -1 || (*head)->bytes_unsaved == 0)
-			return (free_list(head), 0);
+			return (free_list(head), false);
 		if (BUFFER_SIZE <= SSIZE_MAX && cur->bytes_unsaved != BUFFER_SIZE)
-			cur->endoffile = 1;
+			cur->endoffile = true;
 		cur->buf[cur->bytes_unsaved] = '\0';
 		cur->line_end = find_endofline(cur);
 		if (cur->line_end == NO_NL && !cur->endoffile)
 			if (!add_new_node(cur))
-				return (free_list(head), 0);
+				return (free_list(head), false);
 		cur = cur->next;
 	}
-	return (1);
+	return (true);
 }
 
 static char	*copy_into_result_and_move_head_to_tail(t_buf **head)

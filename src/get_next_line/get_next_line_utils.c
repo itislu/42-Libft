@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:27:22 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 18:09:54 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:12:32 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include <stdlib.h>
 #include <sys/types.h>
 
-int	add_new_node(t_buf *cur)
+bool	add_new_node(t_buf *cur)
 {
 	cur->next = (t_buf *)malloc(sizeof(t_buf));
 	if (!cur->next)
-		return (0);
+		return (false);
 	cur->next->bytes_unsaved = 0;
 	cur->next->line_end = NO_NL;
-	cur->next->endoffile = 0;
+	cur->next->endoffile = false;
 	cur->next->next = NULL;
-	return (1);
+	return (true);
 }
 
 size_t	count_result_size(t_buf *cur)
@@ -69,20 +69,20 @@ void	free_list(t_buf **head)
 	}
 }
 
-int	initial_check(int fd, t_buf **head)
+bool	initial_check(int fd, t_buf **head)
 {
 	if (fd < 0 || fd >= FD_MAX || BUFFER_SIZE < 1)
-		return (0);
+		return (false);
 	if (!*head)
 	{
 		*head = (t_buf *)malloc(sizeof(t_buf));
 		if (!*head)
-			return (0);
+			return (false);
 		(*head)->buf[0] = '\0';
 		(*head)->bytes_unsaved = 0;
 		(*head)->line_end = NO_NL;
-		(*head)->endoffile = 0;
+		(*head)->endoffile = false;
 		(*head)->next = NULL;
 	}
-	return (1);
+	return (true);
 }
