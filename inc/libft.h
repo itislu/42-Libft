@@ -143,11 +143,11 @@ char		*ft_strdel_sequence(const char *str, const char *sequence);
 char		*ft_strdup(const char *s);
 bool		ft_strisdigits(const char *s);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
-char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin(const char *s1, const char *s2);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 size_t		ft_strlen(const char *s);
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char		*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int			ft_strmatches_any(const char *str, int n, ...);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strndup(const char *s, size_t n);
@@ -159,7 +159,7 @@ bool		ft_strrplc_part(char **str, const char *rplcmt, size_t start, \
 char		*ft_strrplc_sequence(const char *str, const char *sequence, \
 									const char *rplcmt);
 char		*ft_strtok(char *str, const char *delim);
-char		*ft_strtrim(char const *s1, char const *set);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strtrim(const char *s1, const char *set);
+char		*ft_substr(const char *s, unsigned int start, size_t len);
 
 #endif

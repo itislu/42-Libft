@@ -6,19 +6,19 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/30 08:21:34 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:41:20 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static size_t	count_strings(char const *s, char c);
-static void		skip_c(char const *s, size_t *pos, char c);
-static size_t	strclen(char const *s, size_t *pos, char c);
+static size_t	count_strings(const char *s, char c);
+static void		skip_c(const char *s, size_t *pos, char c);
+static size_t	strclen(const char *s, size_t *pos, char c);
 static char		*protected_malloc(char **str_array, size_t i, size_t len);
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	size_t	i;
 	size_t	len;
@@ -47,7 +47,7 @@ char	**ft_split(char const *s, char c)
 	return (str_array);
 }
 
-static size_t	count_strings(char const *s, char c)
+static size_t	count_strings(const char *s, char c)
 {
 	size_t	pos;
 	size_t	str_count;
@@ -69,13 +69,13 @@ static size_t	count_strings(char const *s, char c)
 	return (str_count);
 }
 
-static void	skip_c(char const *s, size_t *pos, char c)
+static void	skip_c(const char *s, size_t *pos, char c)
 {
 	while (s[*pos] == c)
 		(*pos)++;
 }
 
-static size_t	strclen(char const *s, size_t *pos, char c)
+static size_t	strclen(const char *s, size_t *pos, char c)
 {
 	size_t	len;
 

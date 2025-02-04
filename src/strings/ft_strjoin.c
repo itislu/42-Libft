@@ -6,14 +6,14 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:09 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:30:40 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:40:13 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*strj;
 	size_t	len1;

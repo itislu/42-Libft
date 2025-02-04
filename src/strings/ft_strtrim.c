@@ -6,16 +6,16 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:51 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:17:39 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:40:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-static void	skip_set(size_t *pos, size_t lim, char const *s1, char const *set);
+static void	skip_set(size_t *pos, size_t lim, const char *s1, const char *set);
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*str_trimmed;
 	size_t	start;
@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str_trimmed);
 }
 
-static void	skip_set(size_t *pos, size_t lim, char const *s1, char const *set)
+static void	skip_set(size_t *pos, size_t lim, const char *s1, const char *set)
 {
 	int		direction;
 	int		is_found;
