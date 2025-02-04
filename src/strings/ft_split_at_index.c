@@ -44,10 +44,16 @@ char	**ft_split_at_index(const char *str, size_t index)
 		return (NULL);
 	str_array[0] = ft_substr(str, 0, index);
 	if (!str_array[0])
-		return (free((void *)str_array), (char **) NULL);
+	{
+		free((void *)str_array);
+		return (NULL);
+	}
 	str_array[1] = ft_substr(str, index, len);
 	if (!str_array[1])
-		return (free(str_array[0]), free((void *)str_array), (char **) NULL);
-	str_array[2] = NULL;
-	return (str_array);
+	{
+		free(str_array[0]);
+		free((void *)str_array);
+		return (NULL);
+	}
+	return (str_array[2] = NULL, str_array);
 }

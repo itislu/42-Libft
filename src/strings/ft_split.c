@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 19:41:20 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 22:17:13 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static size_t	count_strings(const char *s, char c);
 static void		skip_c(const char *s, size_t *pos, char c);
 static size_t	strclen(const char *s, size_t *pos, char c);
-static char		*protected_malloc(char **str_array, size_t i, size_t len);
+static bool		protected_malloc(char **str_array, size_t i, size_t len);
 
 char	**ft_split(const char *s, char c)
 {
@@ -36,9 +36,8 @@ char	**ft_split(const char *s, char c)
 	{
 		skip_c(s, &pos, c);
 		len = strclen(s, &pos, c);
-		str_array[i] = protected_malloc(str_array, i, len + 1);
-		if (str_array[i] == NULL)
-			return (free((void *)str_array), (char **) NULL);
+		if (!protected_malloc(str_array, i, len + 1))
+			return (NULL);
 		str_array[i] = ft_memcpy(str_array[i], &s[pos - len], len);
 		str_array[i][len] = '\0';
 		i++;
@@ -88,17 +87,15 @@ static size_t	strclen(const char *s, size_t *pos, char c)
 	return (len);
 }
 
-static char	*protected_malloc(char **str_array, size_t i, size_t len)
+static bool	protected_malloc(char **str_array, size_t i, size_t len)
 {
 	str_array[i] = (char *)malloc(len);
 	if (str_array[i] == NULL)
 	{
 		while (i > 0)
-		{
-			i--;
-			free(str_array[i]);
-		}
-		return (NULL);
+			free(str_array[--i]);
+		free((void *)str_array);
+		return (false);
 	}
-	return (str_array[i]);
+	return (true);
 }
