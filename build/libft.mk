@@ -139,6 +139,7 @@ SRC		+=	$(addprefix $(DIR), \
 			ft_isodd.c \
 			ft_isoverflow_int.c \
 			ft_isoverflow_long.c \
+			ft_itoa.c \
 			ft_max.c \
 			ft_min.c \
 			ft_round_down_even.c \
@@ -163,7 +164,6 @@ SRC		+=	$(addprefix $(DIR), \
 DIR		:=	strings/
 SRC		+=	$(addprefix $(DIR), \
 			ft_alphabetic.c \
-			ft_itoa.c \
 			ft_split.c \
 			ft_split_at_index.c \
 			ft_strchr.c \

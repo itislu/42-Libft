@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:04:05 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 22:16:19 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/04 23:54:56 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,18 @@
 static unsigned int	count_digits(int n);
 static void			convert(long n, char *s, unsigned int char_count);
 
+/**
+ * The ft_itoa function converts an integer to its string representation.
+ *
+ * @param n      The integer to convert.
+ *
+ * @return       Returns a newly allocated string containing the number,
+ *               or NULL if the allocation fails.
+ *
+ * @note         The returned string is dynamically allocated and must be freed
+ *               by the caller to avoid memory leaks.
+ *
+ */
 char	*ft_itoa(int n)
 {
 	char			*s;

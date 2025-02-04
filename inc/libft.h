@@ -113,6 +113,7 @@ bool		ft_iseven(int value);
 bool		ft_isodd(int value);
 bool		ft_isoverflow_int(const char *nptr);
 bool		ft_isoverflow_long(const char *nptr);
+char		*ft_itoa(int n);
 int			ft_max(int a, int b);
 int			ft_min(int a, int b);
 int			ft_round_down_even(int value);
@@ -135,7 +136,6 @@ size_t		ft_sputnstr(char *str, const char *s, size_t n);
 /* Strings */
 
 bool		ft_alphabetic(const char *str1, const char *str2);
-char		*ft_itoa(int n);
 char		**ft_split(const char *s, char c);
 char		**ft_split_at_index(const char *str, size_t index);
 char		*ft_strchr(const char *s, int c);
