@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:08:23 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 20:48:22 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 00:44:31 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
  * @return        Returns a pointer to dest.
  *
  * @note          Calling ft_memcpy with dest or src equal to NULL with n not 0
- *                will cause a segmentation fault (mirrors the behavior of the
- *                original memmove).
+ *                is undefined behavior (mirrors the behavior of the original 
+ *                memmove).
  *
  */
 void	*ft_memmove(void *dest, const void *src, size_t n)

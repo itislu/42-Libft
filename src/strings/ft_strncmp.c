@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:22 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 21:58:28 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 00:47:59 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
  *              A negative integer if the first character that does not match
  *              has a lower value in s1 than in s2.
  *
- * @note        Calling ft_strncmp with s1 or s2 equal to NULL with n not 0 will
- *              cause a segmentation fault (mirrors the behavior of the original
+ * @note        Calling ft_strncmp with s1 or s2 equal to NULL with n not 0 is 
+ *              undefined behavior (mirrors the behavior of the original
  *              strncmp).
  *
  */

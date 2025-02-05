@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:57 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 20:26:13 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 01:00:02 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
  *                truncated.
  *
  * @note          Calling ft_strlcpy with dst equal to NULL with a size not 0,
- *                or with src equal to NULL will cause a segmentation fault
- *                (mirrors the behavior of the original strlcpy).
+ *                or with src equal to NULL, is undefined behavior (mirrors the 
+ *                behavior of the original strlcpy).
  *
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)

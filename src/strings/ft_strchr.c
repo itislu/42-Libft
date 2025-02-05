@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:13:12 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 21:56:53 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 00:44:49 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
  * @return     A pointer to the located character, or NULL if the character does
  *             not appear in the string.
  *
- * @note       Calling ft_strchr with s equal to NULL will cause a segmentation
- *             fault (mirrors the behavior of the original strchr).
+ * @note       Calling ft_strchr with s equal to NULL is undefined behavior
+ *             (mirrors the behavior of the original strchr).
  *
  */
 char	*ft_strchr(const char *s, int c)

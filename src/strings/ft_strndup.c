@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:14:59 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:30:44 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 00:58:22 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@
  *             allocation failed.
  *             The returned string will have to be freed later.
  *
- * @note       Calling ft_strdup with s equal to NULL with a size not 0 will
- *             cause a segmentation fault (mirrors the behavior of the original
- *             strdup).
+ * @note       Calling ft_strdup with s equal to NULL with n not 0 is undefined 
+ *             behavior (mirrors the behavior of the original strndup).
  *
  */
 char	*ft_strndup(const char *s, size_t n)

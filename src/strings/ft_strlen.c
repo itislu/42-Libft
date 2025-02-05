@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:06 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 11:03:55 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 00:46:09 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
  *
  * @return     The length of the string s.
  *
- * @note       Calling ft_strlen with s equal to NULL will cause a segmentation
- *             fault (mirrors the behavior of the original strlen).
+ * @note       Calling ft_strlen with s equal to NULL is undefined behavior 
+ *             (mirrors the behavior of the original strlen).
  *
  */
 size_t	ft_strlen(const char *s)

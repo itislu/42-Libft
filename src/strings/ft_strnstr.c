@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:27 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 16:14:46 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 00:59:35 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
  *                  returned.
  *
  * @note            Calling ft_strnstr with big equal to NULL with a size not 0,
- *                  or with little equal to NULL will cause a segmentation fault
- *                  (mirrors the behavior of the original strnstr).
+ *                  or with little equal to NULL, is undefined behavior (mirrors
+ *                  the behavior of the original strnstr).
  *
  */
 char	*ft_strnstr(const char *big, const char *little, size_t len)

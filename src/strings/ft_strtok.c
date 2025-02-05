@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 21:48:31 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:17:34 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 00:47:11 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@
  *                 If there are no more tokens, it returns NULL.
  *
  * @note           Calling ft_strtok the first time with str equal to NULL, or
- *                 at any point with delim equal to NULL, will cause a
- *                 segmentation fault (mirrors the behavior of the original
- *                 strtok).
+ *                 at any point with delim equal to NULL, is undefined behavior
+ *                 (mirrors the behavior of the original strtok).
  *
  */
 char	*ft_strtok(char *str, const char *delim)

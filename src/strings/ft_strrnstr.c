@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 18:05:04 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 12:47:19 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 00:51:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@
  *                  occurrence of little is returned.
  *
  * @note            Calling ft_strrnstr with big equal to NULL with a size not
- *                  0, or with little equal to NULL will cause a segmentation
- *                  fault.
+ *                  0, or with little equal to NULL, is undefined behavior.
  *
  */
 char	*ft_strrnstr(const char *big, const char *little, size_t len)
