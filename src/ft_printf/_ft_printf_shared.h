@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:27:27 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 18:25:21 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/05 07:13:59 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@
 # define NO_PRECISION_SET		-1
 # define NEGATIVE_PRECISION		-2
 
-int	return_value(size_t printed);
+int	return_value(size_t ret);
 
 #endif
