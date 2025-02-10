@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 02:20:16 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 18:12:36 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/10 21:07:38 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,25 +85,15 @@ static bool	check_for_duplicate(const char *base, size_t base_len)
 static unsigned long	truncate_nbr_if_needed(unsigned long nbr, \
 												size_t base_len, size_t max_len)
 {
-	size_t			nbr_len;
-	unsigned long	tmp;
+	size_t	nbr_len;
 
 	if (nbr == 0 || max_len == 0)
 		return (0);
-	nbr_len = 0;
-	tmp = nbr;
-	while (tmp != 0)
+	nbr_len = ft_nbrlen_base_u(nbr, base_len);
+	while (nbr_len > max_len)
 	{
-		nbr_len++;
-		tmp /= base_len;
-	}
-	if (nbr_len > max_len)
-	{
-		while (nbr_len > max_len)
-		{
-			nbr_len--;
-			nbr /= base_len;
-		}
+		nbr /= base_len;
+		nbr_len--;
 	}
 	return (nbr);
 }

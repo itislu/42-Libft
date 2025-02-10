@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:17:46 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/10 20:22:30 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:23:02 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,8 @@ long			ft_max(long a, long b);
 size_t			ft_max_u(size_t a, size_t b);
 long			ft_min(long a, long b);
 size_t			ft_min_u(size_t a, size_t b);
+unsigned int	ft_nbrlen_base(long nbr, unsigned int base);
+unsigned int	ft_nbrlen_base_u(size_t nbr, unsigned int base);
 int				ft_round_down_even(int value);
 
 \

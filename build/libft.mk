@@ -145,6 +145,8 @@ SRC		+=	$(addprefix $(DIR), \
 			ft_max_u.c \
 			ft_min.c \
 			ft_min_u.c \
+			ft_nbrlen_base.c \
+			ft_nbrlen_base_u.c \
 			ft_round_down_even.c \
 )
 
