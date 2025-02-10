@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:17:46 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 23:42:44 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/10 02:14:14 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,10 @@ bool		ft_isodd(int value);
 bool		ft_isoverflow_int(const char *nptr);
 bool		ft_isoverflow_long(const char *nptr);
 char		*ft_itoa(int n);
-int			ft_max(int a, int b);
-int			ft_min(int a, int b);
+long		ft_max(long a, long b);
+size_t		ft_max_u(size_t a, size_t b);
+long		ft_min(long a, long b);
+size_t		ft_min_u(size_t a, size_t b);
 int			ft_round_down_even(int value);
 
 \

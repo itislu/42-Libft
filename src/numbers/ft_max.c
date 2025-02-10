@@ -6,21 +6,27 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 11:02:14 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 11:14:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:24:28 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <sys/param.h>
+
 /**
- * The ft_max function returns the maximum of two integers.
+ * The ft_max function returns the maximum of two signed integers in a type-safe 
+ * way.
  *
  * @param a    The first integer to compare.
  * @param b    The second integer to compare.
  *
  * @return     Returns the larger of the two integers.
+ *
+ * @note       If performance is critical, use the MAX macro from sys/param.h 
+ *             directly to avoid the function call overhead.
+ *             However, when using the macro watch out for double-evaluation and 
+ *             type safety!
  */
-int	ft_max(int a, int b)
+long	ft_max(long a, long b)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	return (MAX(a, b));
 }
