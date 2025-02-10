@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:27:24 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 18:25:52 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:30:14 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_sformat
 	char			*str;
 	size_t			size;
 	size_t			sprinted;
+	size_t			chars_needed;
 }	t_sformat;
 
 bool	check_args(char *str, size_t size, const char *format, t_sformat *f);
@@ -51,8 +52,10 @@ void	sprint_ptr_prefix(t_sformat *f);
 void	sprint_ptr_zero_padding(t_sformat *f, unsigned int len_ptr, \
 								unsigned int len_full);
 void	sprint_str(const char *str, t_sformat *f);
-size_t	max_size(const t_sformat *f, size_t size);
 void	reset_sformat(t_sformat *f);
 size_t	set_sformat(const char *format, size_t *i, t_sformat *f, va_list *ap);
+void	strcpy_record(t_sformat *f, const char *src, size_t target_len);
+void	strcpy_char_record(t_sformat *f, unsigned char c, size_t target_amount);
+void	strcpy_nbr_record(t_sformat *f, long nbr, const char *base);
 
 #endif

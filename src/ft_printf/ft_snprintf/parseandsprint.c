@@ -6,13 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/31 15:29:25 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/10 12:20:49 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "_ft_snprintf.h"
 #include "../_ft_printf_shared.h"
-#include "libft.h"
 #include <stdarg.h>
 #include <stddef.h>
 
@@ -26,8 +25,7 @@ void	parseandsprint(const char *format, size_t *i, t_sformat *f, va_list *ap)
 		parsed += set_sformat(format, i, f, ap);
 		if (format[*i] == '\0' && !f->specifier && !f->unresolved)
 		{
-			f->str[f->sprinted] = '\0';
-			f->sprinted = -1;
+			f->chars_needed = -1;
 			return ;
 		}
 		if (f->specifier)
@@ -52,7 +50,7 @@ void	sprint_argument(t_sformat *f, va_list *ap)
 	else if (f->specifier == 'x' || f->specifier == 'X')
 		sprint_nbr((long)va_arg(*ap, unsigned int), f);
 	else if (f->specifier == '%')
-		f->sprinted += ft_sputnchar(&f->str[f->sprinted], '%', max_size(f, 1));
+		strcpy_char_record(f, '%', 1);
 }
 
 void	reset_sformat(t_sformat *f)

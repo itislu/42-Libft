@@ -6,13 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:12 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 18:28:44 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/09 23:45:51 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "_ft_snprintf.h"
 #include "../_ft_printf_shared.h"
-#include "libft.h"
 #include <stddef.h>
 
 static void			sprint_nullptr(t_sformat *f);
@@ -42,13 +41,10 @@ static void	sprint_nullptr(t_sformat *f)
 	const unsigned int	len = sizeof(NULL_PRINTOUT_PTR) - 1;
 
 	if (!f->minus && f->width > len)
-		f->sprinted += ft_sputnchar(&f->str[f->sprinted], ' ',
-				max_size(f, f->width - len));
-	f->sprinted += ft_sputnstr(&f->str[f->sprinted], NULL_PRINTOUT_PTR,
-			max_size(f, len));
+		strcpy_char_record(f, ' ', f->width - len);
+	strcpy_record(f, NULL_PRINTOUT_PTR, len);
 	if (f->minus && f->width > len)
-		f->sprinted += ft_sputnchar(&f->str[f->sprinted], ' ',
-				max_size(f, f->width - len));
+		strcpy_char_record(f, ' ', f->width - len);
 }
 
 static void	sputhex(size_t ptr, t_sformat *f)
@@ -57,11 +53,9 @@ static void	sputhex(size_t ptr, t_sformat *f)
 		sputhex(ptr / 16, f);
 	ptr %= 16;
 	if (ptr >= 10)
-		f->sprinted += ft_sputnchar(&f->str[f->sprinted], ptr - 10 + 'a',
-				max_size(f, 1));
+		strcpy_char_record(f, ptr - 10 + 'a', 1);
 	else
-		f->sprinted += ft_sputnchar(&f->str[f->sprinted], ptr + '0',
-				max_size(f, 1));
+		strcpy_char_record(f, ptr + '0', 1);
 }
 
 static unsigned int	ptrlen(size_t ptr)
