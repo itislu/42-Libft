@@ -131,6 +131,7 @@ SRC		+=	$(addprefix $(DIR), \
 # Numbers:
 DIR		:=	numbers/
 SRC		+=	$(addprefix $(DIR), \
+			ft_abs.c \
 			ft_atof.c \
 			ft_atoi.c \
 			ft_atol.c \
