@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/12 23:42:42 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 00:24:00 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	ft_vsnprintf(char *str, size_t size, const char *format, va_list ap)
 		reset_sformat(&f);
 		parseandsprint(format, &i, &f, &ap_copy);
 	}
-	va_end(ap);
+	va_end(ap_copy);
 	return (return_value(f.chars_needed));
 }
