@@ -6,35 +6,21 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/12 23:42:10 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 00:42:39 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "_ft_snprintf.h"
-#include "../_ft_printf_shared.h"
+#include "ft_printf.h"
 #include <stdarg.h>
 #include <stddef.h>
 
 int	ft_snprintf(char *str, size_t size, const char *format, ...)
 {
-	size_t		i;
-	t_sformat	f;
-	va_list		ap;
+	int		ret;
+	va_list	ap;
 
-	if (!check_args(str, size, format))
-		return (return_value(-1));
-	f.str = str;
-	f.size = size;
-	f.unresolved = false;
-	f.sprinted = 0;
-	f.chars_needed = 0;
-	i = 0;
 	va_start(ap, format);
-	while (format[i] && f.chars_needed != (size_t)-1)
-	{
-		reset_sformat(&f);
-		parseandsprint(format, &i, &f, &ap);
-	}
+	ret = ft_vsnprintf(str, size, format, ap);
 	va_end(ap);
-	return (return_value(f.chars_needed));
+	return (ret);
 }
