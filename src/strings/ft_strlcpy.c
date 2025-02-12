@@ -17,8 +17,7 @@
 /**
  * The ft_strlcpy function copies the NUL-terminated string from src to dst.
  * It will copy at most size - 1 characters.
- * It will then NUL-terminate, unless size is 0 or the src string is longer than
- * size.
+ * It will then NUL-terminate the result, unless size is 0.
  *
  * @param dst     The string to copy to.
  * @param src     The string to copy from.
