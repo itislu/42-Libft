@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:27:24 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/10 20:30:14 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/12 23:42:17 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_sformat
 	size_t			chars_needed;
 }	t_sformat;
 
-bool	check_args(char *str, size_t size, const char *format, t_sformat *f);
+bool	check_args(char *str, size_t size, const char *format);
 void	parseandsprint(const char *format, size_t *i, t_sformat *f, \
 						va_list *ap);
 void	sprint_argument(t_sformat *f, va_list *ap);

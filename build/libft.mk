@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2025/02/10 20:30:10 by ldulling         ###   ########.fr        #
+#    Updated: 2025/02/12 23:13:55 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -160,9 +160,6 @@ SRC		+=	$(addprefix $(DIR), \
 			ft_putnchar_fd.c \
 			ft_putnstr_fd.c \
 			ft_putstr_fd.c \
-			ft_snputnbr_base.c \
-			ft_sputnchar.c \
-			ft_sputnstr.c \
 )
 
 # Strings:
@@ -180,6 +177,7 @@ SRC		+=	$(addprefix $(DIR), \
 			ft_strjoin.c \
 			ft_strlcat.c \
 			ft_strlcpy.c \
+			ft_strlcpy_nbr_base.c \
 			ft_strlen.c \
 			ft_strmapi.c \
 			ft_strmatches_any.c \
