@@ -6,12 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:57 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 01:00:02 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:26:59 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
+#include <sys/param.h>
 
 /**
  * The ft_strlcpy function copies the NUL-terminated string from src to dst.
@@ -36,16 +37,10 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	const size_t	srclen = ft_strlen(src);
-	size_t			i;
+	const size_t	cpylen = MIN(srclen, size - 1);
 
 	if (size == 0)
 		return (srclen);
-	i = 0;
-	while (i < size - 1 && i < srclen)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (srclen);
+	ft_memcpy(dst, src, cpylen);
+	dst[cpylen] = '\0';
 }
