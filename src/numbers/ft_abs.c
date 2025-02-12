@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 01:16:45 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/10 18:09:19 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/12 20:12:48 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@
 unsigned long	ft_abs(long n)
 {
 	if (n < 0)
-		return (-n);
+		return (-(unsigned long)n);
 	return (n);
 }
