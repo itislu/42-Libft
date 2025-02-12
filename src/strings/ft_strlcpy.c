@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:57 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/12 18:26:59 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/12 23:48:13 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		return (srclen);
 	ft_memcpy(dst, src, cpylen);
 	dst[cpylen] = '\0';
+	return (ft_strlen(src));
 }
