@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:51 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 19:40:19 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:47:05 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 static void	skip_set(size_t *pos, size_t lim, const char *s1, const char *set)
 {
 	int		direction;
-	int		is_found;
+	bool	is_found;
 	size_t	i;
 
 	if (*pos < lim)
@@ -44,17 +44,17 @@ static void	skip_set(size_t *pos, size_t lim, const char *s1, const char *set)
 	else
 		direction = -1;
 	lim += direction;
-	is_found = 1;
+	is_found = true;
 	while (*pos != lim && is_found)
 	{
-		is_found = 0;
+		is_found = false;
 		i = 0;
 		while (set[i] && !is_found)
 		{
 			if (s1[*pos] == set[i])
 			{
 				*pos += direction;
-				is_found = 1;
+				is_found = true;
 			}
 			i++;
 		}
