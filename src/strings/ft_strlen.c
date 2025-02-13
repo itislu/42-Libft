@@ -22,7 +22,6 @@
  *
  * @note       Calling ft_strlen with s equal to NULL is undefined behavior 
  *             (mirrors the behavior of the original strlen).
- *
  */
 size_t	ft_strlen(const char *s)
 {

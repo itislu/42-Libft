@@ -21,7 +21,6 @@
  *
  * @return     Returns true if the string s contains digits and digits only, 
  *             false otherwise.
- *
  */
 bool	ft_strisdigits(const char *s)
 {

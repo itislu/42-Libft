@@ -21,7 +21,6 @@
  *               inserted.
  *               If *lst is NULL, the new node is set as the first node.
  * @param new    The new node or list to be inserted into the list.
- *
  */
 void	ft_lstinsert_after(t_list **lst, t_list *new)
 {

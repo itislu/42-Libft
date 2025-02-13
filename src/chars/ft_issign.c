@@ -17,7 +17,6 @@
  * @param c    The character to check.
  *
  * @return     Returns 1 if the character is a sign character, 0 otherwise.
- *
  */
 int	ft_issign(int c)
 {

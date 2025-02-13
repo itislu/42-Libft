@@ -29,7 +29,6 @@ static size_t	print(unsigned long u_n, const char *base, size_t base_len, \
  * @param fd      The file descriptor to write to.
  *
  * @return        It always returns the number of characters written.
- *
  */
 size_t	ft_putnbr_base_fd(long n, const char *base, int fd)
 {

@@ -27,7 +27,6 @@
  *                 string.
  *                 If the input string is NULL, the index is out of bounds, or
  *                 memory allocation fails, it returns NULL.
- *
  */
 char	**ft_split_at_index(const char *str, size_t index)
 {

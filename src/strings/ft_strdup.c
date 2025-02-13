@@ -24,7 +24,6 @@
  *
  * @note       Calling ft_strdup with s equal to NULL is undefined behavior
  *             (mirrors the behavior of the original strdup).
- *
  */
 char	*ft_strdup(const char *s)
 {

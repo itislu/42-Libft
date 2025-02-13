@@ -44,7 +44,6 @@ static size_t			strcpy_nbr(char *dst, unsigned long u_nbr, \
  * @note          Calling ft_strlcpy_nbr_base with dst equal to NULL with a size
  *                not 0 is undefined behavior (mirrors the behavior of the 
  *                original basic strlcpy).
- *
  */
 size_t	ft_strlcpy_nbr_base(char *dst, long nbr, const char *base, size_t size)
 {

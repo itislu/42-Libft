@@ -29,7 +29,6 @@
  *
  * @note            Calling ft_strrnstr with big equal to NULL with a size not
  *                  0, or with little equal to NULL, is undefined behavior.
- *
  */
 char	*ft_strrnstr(const char *big, const char *little, size_t len)
 {

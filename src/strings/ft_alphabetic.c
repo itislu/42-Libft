@@ -28,7 +28,6 @@ static int	compare_non_alphanumeric(const char *str1, const char *str2);
  * @param str2    The second string to be compared.
  *
  * @return        True, if str1 should come before str2, false otherwise.
- *
  */
 bool	ft_alphabetic(const char *str1, const char *str2)
 {

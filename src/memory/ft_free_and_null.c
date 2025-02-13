@@ -21,7 +21,6 @@
  *
  * @param ptr    A double pointer to the memory to be freed.
  *               If ptr or *ptr is NULL, the function does nothing.
- *
  */
 void	ft_free_and_null(void **ptr)
 {

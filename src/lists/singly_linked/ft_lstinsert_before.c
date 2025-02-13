@@ -23,7 +23,6 @@
  * @param cur    The node before which the new node or list should be inserted.
  *               If cur cannot be found in lst, the function does nothing.
  * @param new    The new node or list to be inserted into the list.
- *
  */
 void	ft_lstinsert_before(t_list **lst, const t_list *cur, t_list *new)
 {

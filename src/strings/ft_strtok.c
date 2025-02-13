@@ -30,7 +30,6 @@
  * @note           Calling ft_strtok the first time with str equal to NULL, or
  *                 at any point with delim equal to NULL, is undefined behavior
  *                 (mirrors the behavior of the original strtok).
- *
  */
 char	*ft_strtok(char *str, const char *delim)
 {

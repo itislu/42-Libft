@@ -33,7 +33,6 @@
  *                    returns a copy of the original string.
  *                    If the sequence is not found in str, the function also
  * 				      returns a copy of the original string.
- *
  */
 char	*ft_strrplc_sequence(const char *str, const char *sequence,
 								const char *rplcmt)

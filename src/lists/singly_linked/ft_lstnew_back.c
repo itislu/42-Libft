@@ -22,7 +22,6 @@
  *
  * @return           Returns true if the new node was successfully added, false
  *                   if malloc failed.
- *
  */
 bool	ft_lstnew_back(t_list **lst, void *content)
 {

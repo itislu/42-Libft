@@ -28,7 +28,6 @@ static int	search_null(va_list *ap, int n);
  * @return       If a match is found, the position of the matching string
  *               (1-indexed).
  *               If no match is found, 0.
- *
  */
 int	ft_strmatches_any(const char *str, int n, ...)
 {

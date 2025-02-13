@@ -21,7 +21,6 @@
  *
  * @note         The function does nothing if the list is empty or contains only
  *               one node.
- *
  */
 void	ft_lstswap_head(t_list **lst)
 {

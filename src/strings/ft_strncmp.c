@@ -29,7 +29,6 @@
  * @note        Calling ft_strncmp with s1 or s2 equal to NULL with n not 0 is 
  *              undefined behavior (mirrors the behavior of the original
  *              strncmp).
- *
  */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

@@ -23,7 +23,6 @@
  *
  * @return       Returns true if the multiplication would stay within range,
  *               false if it would exceed max.
- *
  */
 bool	ft_inrange_mul_u(size_t a, size_t b, size_t max)
 {

@@ -27,7 +27,6 @@
  *
  * @return        Returns true if the string represents a number that would
  *                cause an overflow, false otherwise.
- *
  */
 bool	ft_isoverflow_int(const char *nptr)
 {

@@ -23,7 +23,6 @@
  * @param fd     The file descriptor to write to.
  *
  * @return       It always returns the number of characters written.
- *
  */
 size_t	ft_putnstr_fd(const char *s, size_t n, int fd)
 {

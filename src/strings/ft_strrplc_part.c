@@ -32,7 +32,6 @@ static char	*join_new_and_back(char *str_new, const char *str, size_t end);
  *                  If str is NULL or points to NULL, or rplcmt is NULL, the
  *                  function also returns true.
  *                  If an error occurs, the function returns false.
- *
  */
 bool	ft_strrplc_part(char **str, const char *rplcmt, size_t start, \
 						size_t len)

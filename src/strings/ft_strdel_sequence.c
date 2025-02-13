@@ -25,7 +25,6 @@
  *
  * @return            A new string with all occurrences of the sequence removed.
  *                    If an error occurs, NULL is returned.
- *
  */
 char	*ft_strdel_sequence(const char *str, const char *sequence)
 {

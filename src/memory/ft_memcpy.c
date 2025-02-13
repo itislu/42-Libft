@@ -26,7 +26,6 @@
  * @note          Calling ft_memcpy with dest or src equal to NULL with n not 0
  *                is undefined behavior (mirrors the behavior of the original 
  *                memcpy).
- *
  */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

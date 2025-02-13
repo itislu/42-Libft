@@ -23,7 +23,6 @@
  * @param lst     The address of the pointer to the list to remove a node from.
  * @param node    The address of the node to be removed.
  * @param del     The function to free the content of the node with.
- *
  */
 void	ft_lstdrop_node_d(t_list_d **lst, t_list_d **node, void (*del)(void *))
 {

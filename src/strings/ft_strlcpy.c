@@ -31,7 +31,6 @@
  * @note          Calling ft_strlcpy with dst equal to NULL with a size not 0,
  *                or with src equal to NULL, is undefined behavior (mirrors the 
  *                behavior of the original strlcpy).
- *
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

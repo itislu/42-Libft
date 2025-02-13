@@ -25,7 +25,6 @@ static void			convert(long n, char *s, unsigned int char_count);
  *
  * @note         The returned string is dynamically allocated and must be freed
  *               by the caller to avoid memory leaks.
- *
  */
 char	*ft_itoa(int n)
 {

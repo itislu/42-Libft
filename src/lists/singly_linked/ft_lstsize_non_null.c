@@ -21,7 +21,6 @@
  *               If lst is NULL, the function returns 0.
  *
  * @return       The number of non-null content nodes in the list.
- *
  */
 int	ft_lstsize_non_null(const t_list *lst)
 {

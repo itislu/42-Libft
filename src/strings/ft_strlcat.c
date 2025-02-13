@@ -33,7 +33,6 @@
  * @note          Calling ft_strlcat with dst equal to NULL with a size not 0,
  *                or with src equal to NULL, is undefined behavior (mirrors the 
  *                behavior of the original strlcat).
- *
  */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

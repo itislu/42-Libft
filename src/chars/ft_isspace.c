@@ -24,7 +24,6 @@
  *
  * @return     Returns 1 if the character is a whitespace character,
  *             0 otherwise.
- *
  */
 int	ft_isspace(int c)
 {

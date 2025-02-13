@@ -25,7 +25,6 @@
  *
  * @return           Returns true if the new node was successfully added, false
  *                   if malloc failed.
- *
  */
 bool	ft_lstnew_back_eff(t_list **lst, t_list **tail, void *content)
 {

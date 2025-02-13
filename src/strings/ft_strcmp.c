@@ -27,7 +27,6 @@
  *
  * @note        Calling ft_strcmp with s1 or s2 equal to NULL is undefined 
  *              behavior (mirrors the behavior of the original strcmp).
- *
  */
 int	ft_strcmp(const char *s1, const char *s2)
 {

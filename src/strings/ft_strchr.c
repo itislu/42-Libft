@@ -24,7 +24,6 @@
  *
  * @note       Calling ft_strchr with s equal to NULL is undefined behavior
  *             (mirrors the behavior of the original strchr).
- *
  */
 char	*ft_strchr(const char *s, int c)
 {

@@ -20,7 +20,6 @@
  * @param lst    A double pointer to the first node of the list.
  *
  * @return       The content of the removed node, or NULL if the list was empty.
- *
  */
 void	*ft_lstpop_front_content(t_list **lst)
 {

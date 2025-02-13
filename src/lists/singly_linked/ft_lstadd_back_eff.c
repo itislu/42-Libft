@@ -22,7 +22,6 @@
  * @param lst     The address of the pointer to the first node of the list.
  * @param tail    The address of the pointer to the last node of the list.
  * @param new     The new node to be added to the list.
- *
  */
 void	ft_lstadd_back_eff(t_list **lst, t_list **tail, t_list *new)
 {

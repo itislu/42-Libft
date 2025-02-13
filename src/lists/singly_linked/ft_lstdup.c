@@ -26,7 +26,6 @@
  *
  * @return       Returns a pointer to the first node of the new list, or NULL if
  *               the list could not be duplicated.
- *
  */
 t_list	*ft_lstdup(const t_list *lst, void *(*dup)(const void *), \
 					void (*del)(void *))
