@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:22 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 00:47:59 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:31:22 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (casted_ptr_s1[i] != casted_ptr_s2[i] || !casted_ptr_s1[i])
+		if (casted_ptr_s1[i] != casted_ptr_s2[i] || casted_ptr_s1[i] == '\0')
 			return ((int)casted_ptr_s1[i] - casted_ptr_s2[i]);
 		i++;
 	}

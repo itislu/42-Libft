@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:12 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/09 23:45:51 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 03:11:37 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	sprint_ptr(size_t ptr, t_sformat *f)
 	const unsigned int	len_ptr = ptrlen(ptr);
 	const unsigned int	len_full = fullptrlen(len_ptr, f);
 
-	if (!ptr)
+	if (ptr == 0)
 	{
 		sprint_nullptr(f);
 		return ;
@@ -63,7 +63,7 @@ static unsigned int	ptrlen(size_t ptr)
 	unsigned int	len_ptr;
 
 	len_ptr = 0;
-	while (ptr)
+	while (ptr > 0)
 	{
 		ptr /= 16;
 		len_ptr++;

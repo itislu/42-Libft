@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 17:53:06 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:38:17 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_printf(const char *format, ...)
 	printed = 0;
 	i = 0;
 	va_start(ap, format);
-	while (format[i] && errno == 0)
+	while (format[i] != '\0' && errno == 0)
 	{
 		reset_format(&f);
 		printed += parseandprint(format, &i, &f, &ap);

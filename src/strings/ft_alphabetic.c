@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 23:41:28 by ldulling          #+#    #+#             */
-/*   Updated: 2024/04/01 18:35:35 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:42:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,20 @@ bool	ft_alphabetic(const char *str1, const char *str2)
 	int	diff;
 
 	diff = compare_case_insensitive(str1, str2);
-	if (diff)
+	if (diff != 0)
 		return (diff < 0);
 	diff = compare_case_sensitive(str1, str2);
-	if (diff)
+	if (diff != 0)
 		return (diff < 0);
 	diff = compare_non_alphanumeric(str1, str2);
-	if (diff)
+	if (diff != 0)
 		return (diff < 0);
 	return (ft_strcmp(str1, str2) <= 0);
 }
 
 static int	compare_case_insensitive(const char *str1, const char *str2)
 {
-	while (*str1 && *str2)
+	while (*str1 != '\0' && *str2 != '\0')
 	{
 		if (ft_isalnum(*str1) && ft_isalnum(*str2))
 		{
@@ -67,7 +67,7 @@ static int	compare_case_insensitive(const char *str1, const char *str2)
 
 static int	compare_case_sensitive(const char *str1, const char *str2)
 {
-	while (*str1 && *str2)
+	while (*str1 != '\0' && *str2 != '\0')
 	{
 		if (ft_isalnum(*str1) && ft_isalnum(*str2))
 		{
@@ -86,7 +86,7 @@ static int	compare_case_sensitive(const char *str1, const char *str2)
 
 static int	compare_non_alphanumeric(const char *str1, const char *str2)
 {
-	while (*str1 && *str2)
+	while (*str1 != '\0' && *str2 != '\0')
 	{
 		if (!ft_isalnum(*str1) && ft_isalnum(*str2))
 			return (-1);

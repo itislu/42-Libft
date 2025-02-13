@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 21:48:31 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 00:47:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:46:07 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,19 @@ char	*ft_strtok(char *str, const char *delim)
 	static char	*to_parse;
 	char		*result;
 
-	if (str)
+	if (str != NULL)
 		to_parse = str;
-	while (*to_parse && ft_strchr(delim, *to_parse))
+	while (*to_parse != '\0' && ft_strchr(delim, *to_parse) != NULL)
 		to_parse++;
 	result = to_parse;
-	while (*to_parse && !ft_strchr(delim, *to_parse))
+	while (*to_parse != '\0' && ft_strchr(delim, *to_parse) == NULL)
 		to_parse++;
-	if (*to_parse)
+	if (*to_parse != '\0')
 	{
 		*to_parse = '\0';
 		to_parse++;
 	}
-	if (*result)
+	if (*result != '\0')
 		return (result);
 	return (NULL);
 }

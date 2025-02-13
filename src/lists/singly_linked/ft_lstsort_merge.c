@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:42:36 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 20:31:47 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:40:35 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ static void	split_list(t_list *head, t_list **front_half, t_list **back_half)
 
 	slow = head;
 	fast = head->next;
-	while (fast)
+	while (fast != NULL)
 	{
 		fast = fast->next;
-		if (fast)
+		if (fast != NULL)
 		{
 			slow = slow->next;
 			fast = fast->next;
@@ -62,7 +62,7 @@ static t_list	*sorted_merge(t_list *front_half, t_list *back_half, \
 		return (back_half);
 	if (back_half == NULL)
 		return (front_half);
-	if (cmp(front_half->content, back_half->content))
+	if (cmp(front_half->content, back_half->content) != (void *)0)
 	{
 		result = front_half;
 		result->next = sorted_merge(front_half->next, back_half, cmp);

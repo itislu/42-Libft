@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:27:22 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 21:12:32 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 03:17:08 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 bool	add_new_node(t_buf *cur)
 {
 	cur->next = (t_buf *)malloc(sizeof(t_buf));
-	if (!cur->next)
+	if (cur->next == NULL)
 		return (false);
 	cur->next->bytes_unsaved = 0;
 	cur->next->line_end = NO_NL;
@@ -32,7 +32,7 @@ size_t	count_result_size(t_buf *cur)
 	size_t	result_size;
 
 	result_size = 0;
-	while (cur->next)
+	while (cur->next != NULL)
 	{
 		result_size += cur->bytes_unsaved;
 		cur = cur->next;
@@ -46,7 +46,7 @@ ssize_t	find_endofline(t_buf *cur)
 	ssize_t	i;
 
 	i = cur->line_end + 1;
-	while (cur->buf[i])
+	while (cur->buf[i] != '\0')
 	{
 		if (cur->buf[i] == '\n')
 			return (i);
@@ -61,7 +61,7 @@ void	free_list(t_buf **head)
 {
 	t_buf	*cur;
 
-	while (*head)
+	while (*head != NULL)
 	{
 		cur = *head;
 		*head = (*head)->next;
@@ -73,10 +73,10 @@ bool	initial_check(int fd, t_buf **head)
 {
 	if (fd < 0 || fd >= FD_MAX || BUFFER_SIZE < 1)
 		return (false);
-	if (!*head)
+	if (*head == NULL)
 	{
 		*head = (t_buf *)malloc(sizeof(t_buf));
-		if (!*head)
+		if (*head == NULL)
 			return (false);
 		(*head)->buf[0] = '\0';
 		(*head)->bytes_unsaved = 0;

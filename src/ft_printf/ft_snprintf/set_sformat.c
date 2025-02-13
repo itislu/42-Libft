@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:21 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 20:11:12 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 01:55:27 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ size_t	set_sformat(const char *format, size_t *i, t_sformat *f, va_list *ap)
 {
 	const size_t	i_original = *i;
 
-	if (format[*i])
+	if (format[*i] != '\0')
 	{
 		set_flags(format, i, f);
-		if (format[*i])
+		if (format[*i] != '\0')
 		{
 			set_width(format, i, f, ap);
-			if (format[*i])
+			if (format[*i] != '\0')
 			{
 				set_precision(format, i, f, ap);
-				if (format[*i])
+				if (format[*i] != '\0')
 					set_specifier(format, i, f);
 			}
 		}
@@ -121,7 +121,7 @@ static void	set_specifier(const char *format, size_t *i, t_sformat *f)
 {
 	const char	*specifier = ft_strchr(SPECIFIERS, format[*i]);
 
-	if (specifier)
+	if (specifier != NULL)
 	{
 		f->specifier = *specifier;
 		(*i)++;

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:30:19 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 20:54:54 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:43:58 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ char	*ft_strdel_sequence(const char *str, const char *sequence)
 	char	*tmp;
 	size_t	unsearched_len;
 
-	if (!str)
+	if (str == NULL)
 		return (NULL);
 	tmp = ft_strdup(str);
-	if (!tmp)
+	if (tmp == NULL)
 		return (NULL);
-	if (!sequence || !*sequence)
+	if (sequence == NULL || *sequence == '\0')
 		return (tmp);
 	seq_len = ft_strlen(sequence);
 	occurrence = ft_strnstr(tmp, sequence, ft_strlen(tmp));
-	while (occurrence)
+	while (occurrence != NULL)
 	{
 		unsearched_len = ft_strlen(occurrence + seq_len);
 		ft_memmove(occurrence, occurrence + seq_len, unsearched_len + 1);

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:06 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 00:46:09 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:44:36 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (s[len])
+	while (s[len] != '\0')
 		len++;
 	return (len);
 }

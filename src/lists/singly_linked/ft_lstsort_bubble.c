@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:16:52 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 00:41:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:40:26 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_lstsort_bubble(t_list **lst, \
 	is_sorted = false;
 	while (!is_sorted)
 	{
-		if (!(*cmp)((*lst)->content, (*lst)->next->content))
+		if ((*cmp)((*lst)->content, (*lst)->next->content) == (void *)0)
 			ft_lstswap_head(lst);
 		is_sorted = pass_once(lst, cmp);
 	}
@@ -43,9 +43,9 @@ static bool	pass_once(t_list **lst, \
 	cur = (*lst)->next;
 	prev = *lst;
 	is_sorted = true;
-	while (cur->next)
+	while (cur->next != NULL)
 	{
-		if (!(*cmp)(cur->content, cur->next->content))
+		if ((*cmp)(cur->content, cur->next->content) == (void *)0)
 		{
 			tmp = cur->next;
 			cur->next = tmp->next;

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:05 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 11:03:38 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:44:10 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	if (s == NULL || f == NULL)
 		return ;
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		(*f)(i, &s[i]);
 		i++;

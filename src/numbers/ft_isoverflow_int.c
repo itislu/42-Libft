@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:39:46 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 19:23:13 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:41:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 /**
  * The ft_isoverflow_int function checks if the passed string represents a
@@ -36,7 +37,7 @@ bool	ft_isoverflow_int(const char *nptr)
 	unsigned int	num_len;
 
 	i = 0;
-	while (nptr[i] && ft_strchr(WHITESPACE, nptr[i]))
+	while (nptr[i] != '\0' && ft_strchr(WHITESPACE, nptr[i]) != NULL)
 		i++;
 	if (nptr[i] == '-')
 		int_max = "2147483648";

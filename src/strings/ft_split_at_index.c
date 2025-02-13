@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:00:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 19:37:08 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:26:16 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,22 @@ char	**ft_split_at_index(const char *str, size_t index)
 	size_t	len;
 	char	**str_array;
 
-	if (!str)
+	if (str == NULL)
 		return (NULL);
 	len = ft_strlen(str);
 	if (index > len)
 		return (NULL);
 	str_array = (char **)malloc(3 * sizeof(char *));
-	if (!str_array)
+	if (str_array == NULL)
 		return (NULL);
 	str_array[0] = ft_substr(str, 0, index);
-	if (!str_array[0])
+	if (str_array[0] == NULL)
 	{
 		free((void *)str_array);
 		return (NULL);
 	}
 	str_array[1] = ft_substr(str, index, len);
-	if (!str_array[1])
+	if (str_array[1] == NULL)
 	{
 		free(str_array[0]);
 		free((void *)str_array);

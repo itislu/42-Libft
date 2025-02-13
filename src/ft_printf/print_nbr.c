@@ -6,12 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 18:02:46 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 03:03:31 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "_ft_printf.h"
 #include "libft.h"
+#include <stddef.h>
 
 static unsigned int	nbrlen(long nbr, const t_format *f);
 static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, \
@@ -49,7 +50,7 @@ static unsigned int	nbrlen(long nbr, const t_format *f)
 	unsigned int	base;
 	unsigned int	len_nbr;
 
-	if (ft_strchr("xX", f->specifier))
+	if (ft_strchr("xX", f->specifier) != NULL)
 		base = 16;
 	else
 		base = 10;
@@ -58,7 +59,7 @@ static unsigned int	nbrlen(long nbr, const t_format *f)
 	else
 	{
 		len_nbr = 0;
-		while (nbr)
+		while (nbr != 0)
 		{
 			nbr /= base;
 			len_nbr++;
@@ -75,11 +76,11 @@ static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, \
 	len_full = len_nbr;
 	if ((int)len_nbr < f->precision)
 		len_full = f->precision;
-	if (!ft_strchr("uxX", f->specifier))
+	if (ft_strchr("uxX", f->specifier) == NULL)
 		if (!(nbr == 0 && f->precision == 0))
 			if (nbr < 0 || f->plus || f->space)
 				len_full++;
-	if (ft_strchr("xX", f->specifier))
+	if (ft_strchr("xX", f->specifier) != NULL)
 		if (f->hash && nbr != 0)
 			len_full += sizeof("0x") - 1;
 	return (len_full);
@@ -90,7 +91,7 @@ static unsigned int	print_prefix(long nbr, const t_format *f)
 	unsigned int	printed;
 
 	printed = 0;
-	if (ft_strchr("xX", f->specifier))
+	if (ft_strchr("xX", f->specifier) != NULL)
 	{
 		if (f->hash && nbr != 0)
 		{

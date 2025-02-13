@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 15:19:37 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:17:23 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:33:09 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ bool	ft_strrplc_part(char **str, const char *rplcmt, size_t start, \
 	size_t	end;
 	char	*str_new;
 
-	if (!str || !*str || !rplcmt)
+	if (str == NULL || *str == NULL || rplcmt == NULL)
 		return (true);
 	if (start > 0)
 		str_new = join_front_and_rplcmt(*str, rplcmt, start);
 	else
 		str_new = ft_strdup(rplcmt);
-	if (!str_new)
+	if (str_new == NULL)
 		return (false);
 	end = start + len;
 	if (end < ft_strlen(*str))
 	{
 		str_new = join_new_and_back(str_new, *str, end);
-		if (!str_new)
+		if (str_new == NULL)
 			return (false);
 	}
 	free(*str);
@@ -67,7 +67,7 @@ static char	*join_front_and_rplcmt(const char *str, const char *rplcmt,
 	char	*str_joined;
 
 	str_front = ft_substr(str, 0, start);
-	if (!str_front)
+	if (str_front == NULL)
 		return (NULL);
 	str_joined = ft_strjoin(str_front, rplcmt);
 	return (free(str_front), str_joined);

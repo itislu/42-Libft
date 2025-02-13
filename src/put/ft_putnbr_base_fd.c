@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:15 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/12 21:45:44 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:42:13 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static size_t	get_base_len(const char *base)
 	size_t	base_len;
 
 	base_len = 0;
-	while (base[base_len])
+	while (base[base_len] != '\0')
 	{
 		if (base[base_len] == '+' || base[base_len] == '-')
 			return (0);

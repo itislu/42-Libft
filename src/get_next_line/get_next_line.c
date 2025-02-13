@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 15:06:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 21:13:23 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:39:50 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*get_next_line(int fd)
 
 	if (!initial_check(fd, &head))
 		return (free_list(&head), NULL);
-	if (head->bytes_unsaved)
+	if (head->bytes_unsaved != 0)
 	{
 		if (check_for_full_leftover_line(&head, &result))
 			return (result);
@@ -39,7 +39,7 @@ char	*get_next_line(int fd)
 	if (!read_until_endofline(&head, fd))
 		return (NULL);
 	result = copy_into_result_and_move_head_to_tail(&head);
-	if (!result)
+	if (result == NULL)
 		return (NULL);
 	head->bytes_unsaved -= head->line_end + 1;
 	if (head->bytes_unsaved == 0)
@@ -57,7 +57,7 @@ static bool	check_for_full_leftover_line(t_buf **head, char **result)
 		return (false);
 	result_size = new_line_end - (*head)->line_end;
 	*result = (char *)malloc(result_size + 1);
-	if (!*result)
+	if (*result == NULL)
 		return (free_list(head), true);
 	i = 0;
 	(*head)->line_end++;
@@ -65,7 +65,7 @@ static bool	check_for_full_leftover_line(t_buf **head, char **result)
 		(*result)[i++] = (*head)->buf[(*head)->line_end++];
 	(*result)[i] = '\0';
 	(*head)->bytes_unsaved -= result_size;
-	if ((*head)->bytes_unsaved)
+	if ((*head)->bytes_unsaved != 0)
 		(*head)->line_end = new_line_end;
 	else
 		free_list(head);
@@ -76,11 +76,11 @@ static bool	read_until_endofline(t_buf **head, int fd)
 {
 	t_buf	*cur;
 
-	if ((*head)->next)
+	if ((*head)->next != NULL)
 		cur = (*head)->next;
 	else
 		cur = *head;
-	while (cur)
+	while (cur != NULL)
 	{
 		cur->bytes_unsaved = read(fd, cur->buf, BUFFER_SIZE);
 		if (cur->bytes_unsaved == -1 || (*head)->bytes_unsaved == 0)
@@ -105,15 +105,15 @@ static char	*copy_into_result_and_move_head_to_tail(t_buf **head)
 	ssize_t	j;
 
 	result = (char *)malloc(count_result_size(*head) + 1);
-	if (!result)
+	if (result == NULL)
 		return (free_list(head), NULL);
 	i = 0;
-	while ((*head)->next)
+	while ((*head)->next != NULL)
 	{
 		cur = *head;
 		(*head) = (*head)->next;
 		j = cur->line_end + 1;
-		while (cur->buf[j])
+		while (cur->buf[j] != '\0')
 			result[i++] = cur->buf[j++];
 		free(cur);
 	}

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:03 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 00:24:00 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:35:26 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_vsnprintf(char *str, size_t size, const char *format, va_list ap)
 	f.chars_needed = 0;
 	i = 0;
 	va_copy(ap_copy, ap);
-	while (format[i] && f.chars_needed != (size_t)-1)
+	while (format[i] != '\0' && f.chars_needed != (size_t)-1)
 	{
 		reset_sformat(&f);
 		parseandsprint(format, &i, &f, &ap_copy);

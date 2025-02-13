@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:12 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 18:00:05 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 03:12:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ unsigned int	print_ptr(size_t ptr, const t_format *f)
 	const unsigned int	len_ptr = ptrlen(ptr);
 	const unsigned int	len_full = fullptrlen(len_ptr, f);
 
-	if (!ptr)
+	if (ptr == 0)
 		return (print_nullptr(f));
 	return (print_ptr_padding_left(f, len_full)
 		+ print_ptr_prefix(f)
@@ -68,7 +68,7 @@ static unsigned int	ptrlen(size_t ptr)
 	unsigned int	len_ptr;
 
 	len_ptr = 0;
-	while (ptr)
+	while (ptr > 0)
 	{
 		ptr /= 16;
 		len_ptr++;

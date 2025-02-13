@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 03:10:28 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:31:17 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:21:28 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_free_and_null(void **ptr)
 {
 	void	*tmp;
 
-	if (ptr && *ptr)
+	if (ptr != NULL && *ptr != NULL)
 	{
 		tmp = *ptr;
 		*ptr = NULL;

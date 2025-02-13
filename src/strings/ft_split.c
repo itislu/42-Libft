@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 22:17:13 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:43:16 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ static size_t	count_strings(const char *s, char c)
 		return (0);
 	str_count = 0;
 	pos = 0;
-	while (s[pos])
+	while (s[pos] != '\0')
 	{
 		skip_c(s, &pos, c);
-		if (s[pos])
+		if (s[pos] != '\0')
 		{
 			str_count++;
-			while (s[pos] != c && s[pos])
+			while (s[pos] != c && s[pos] != '\0')
 				pos++;
 		}
 	}
@@ -79,7 +79,7 @@ static size_t	strclen(const char *s, size_t *pos, char c)
 	size_t	len;
 
 	len = 0;
-	while (s[*pos] != c && s[*pos])
+	while (s[*pos] != c && s[*pos] != '\0')
 	{
 		len++;
 		(*pos)++;

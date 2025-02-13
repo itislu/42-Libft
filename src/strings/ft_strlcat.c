@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:16 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 01:00:06 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:44:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dstlen;
 	size_t	srclen;
 
-	if (dst == NULL && size == 0 && src)
+	if (dst == NULL && size == 0 && src != NULL)
 		return (0);
 	dstlen = ft_strlen(dst);
 	catlen = dstlen;
 	srclen = 0;
-	while (catlen + 1 < size && src[srclen])
+	while (catlen + 1 < size && src[srclen] != '\0')
 	{
 		dst[catlen] = src[srclen];
 		catlen++;
@@ -54,7 +54,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	if (dstlen < size)
 		dst[catlen] = '\0';
-	while (src[srclen])
+	while (src[srclen] != '\0')
 		srclen++;
 	if (size < dstlen)
 		return (size + srclen);

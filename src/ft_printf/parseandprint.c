@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 17:56:26 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:02:33 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ size_t	parseandprint(const char *format, size_t *i, t_format *f, va_list *ap)
 	if (format[(*i)++] == '%')
 	{
 		parsed += set_format(format, i, f, ap);
-		if (format[*i] == '\0' && !f->specifier && !f->unresolved)
+		if (format[*i] == '\0' && f->specifier == '\0' && !f->unresolved)
 		{
 			errno = EINVAL;
 			return (printed);
 		}
-		if (f->specifier)
+		if (f->specifier != '\0')
 			printed += print_argument(f, ap);
 	}
-	if (!f->specifier)
+	if (f->specifier == '\0')
 		printed += print_parsed(&format[*i - parsed], parsed, f);
 	return (printed);
 }

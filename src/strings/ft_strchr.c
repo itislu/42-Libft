@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:13:12 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 00:44:49 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:43:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ char	*ft_strchr(const char *s, int c)
 
 	if (casted_c == '\0')
 	{
-		while (*s)
+		while (*s != '\0')
 			s++;
 		return ((char *)s);
 	}
-	while (*s)
+	while (*s != '\0')
 	{
 		if (*s == casted_c)
 			return ((char *)s);

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:12:14 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/10 01:53:19 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/02/13 02:36:17 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	sprint_flags(const char *format, size_t *i, t_sformat *f)
 		strcpy_char_record(f, '-', 1);
 	if (f->zero && (!f->minus || f->minus == FROM_NEGATIVE_WIDTH))
 		strcpy_char_record(f, '0', 1);
-	while (format[*i] && ft_strchr(FLAGS, format[*i]))
+	while (format[*i] != '\0' && ft_strchr(FLAGS, format[*i]) != NULL)
 		(*i)++;
 }
 
