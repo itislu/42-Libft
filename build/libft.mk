@@ -171,6 +171,7 @@ SRC		+=	$(addprefix $(DIR), \
 			ft_split_at_index.c \
 			ft_strchr.c \
 			ft_strcmp.c \
+			ft_strcount_str.c \
 			ft_strdel_sequence.c \
 			ft_strdup.c \
 			ft_strisdigits.c \

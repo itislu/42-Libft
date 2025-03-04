@@ -144,6 +144,7 @@ char			**ft_split(const char *s, char c);
 char			**ft_split_at_index(const char *str, size_t index);
 char			*ft_strchr(const char *s, int c);
 int				ft_strcmp(const char *s1, const char *s2);
+size_t			ft_strcount_str(const char *big, const char *little);
 char			*ft_strdel_sequence(const char *str, const char *sequence);
 char			*ft_strdup(const char *s);
 bool			ft_strisdigits(const char *s);
