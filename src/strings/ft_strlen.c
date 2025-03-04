@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:16:06 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 02:44:36 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/04 04:03:11 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * The ft_strlen function calculates the length of the string pointed to by s,
- * excluding the terminating null byte ('\0').
+ * excluding the terminating NUL byte ('\0').
  *
  * @param s    The string to be measured.
  *

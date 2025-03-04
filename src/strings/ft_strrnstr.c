@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 18:05:04 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 02:45:08 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/04 04:02:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stddef.h>
 
 /**
- * The ft_strrnstr function locates the last occurrence of the null-terminated
+ * The ft_strrnstr function locates the last occurrence of the NULL-terminated
  * string little in the string big, where not more than len characters are
  * searched. Characters that appear after a '\0' character are not searched.
  *
