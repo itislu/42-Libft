@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 02:20:16 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 02:44:28 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/05 23:17:34 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ size_t	ft_strlcpy_nbr_base(char *dst, long nbr, const char *base, size_t size)
 		dst[copied++] = '-';
 	if (copied + 1 < size)
 	{
-		u_nbr = ft_abs(nbr);
+		u_nbr = ft_labs_u(nbr);
 		u_nbr = truncate_nbr_if_needed(u_nbr, base_len, size - copied - 1);
 		copied += strcpy_nbr(&dst[copied], u_nbr, base, base_len);
 	}

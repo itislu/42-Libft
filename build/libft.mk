@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2025/03/04 05:29:18 by ldulling         ###   ########.fr        #
+#    Updated: 2025/03/05 23:10:59 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,6 +132,7 @@ SRC		+=	$(addprefix $(DIR), \
 DIR		:=	numbers/
 SRC		+=	$(addprefix $(DIR), \
 			ft_abs.c \
+			ft_abs_u.c \
 			ft_atof.c \
 			ft_atoi.c \
 			ft_atol.c \
@@ -141,6 +142,8 @@ SRC		+=	$(addprefix $(DIR), \
 			ft_isoverflow_int.c \
 			ft_isoverflow_long.c \
 			ft_itoa.c \
+			ft_labs.c \
+			ft_labs_u.c \
 			ft_max.c \
 			ft_max_u.c \
 			ft_min.c \

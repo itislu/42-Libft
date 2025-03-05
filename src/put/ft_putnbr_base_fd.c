@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:15 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 02:42:13 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/05 23:17:28 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ size_t	ft_putnbr_base_fd(long n, const char *base, int fd)
 	{
 		if (write(fd, "-", 1) == 1)
 			written += 1;
-		u_n = ft_abs(n);
+		u_n = ft_labs_u(n);
 	}
 	else
 		u_n = (unsigned long)n;

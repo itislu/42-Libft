@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 00:56:02 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/12 21:03:49 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/05 23:16:59 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ unsigned int	ft_nbrlen_base(long nbr, unsigned int base)
 {
 	unsigned int	len;
 
-	len = ft_nbrlen_base_u(ft_abs(nbr), base);
+	len = ft_nbrlen_base_u(ft_labs_u(nbr), base);
 	if (nbr < 0)
 		len++;
 	return (len);

@@ -107,7 +107,8 @@ void			*ft_memset(void *s, int c, size_t n);
 \
 /* Numbers */
 
-unsigned long	ft_abs(long n);
+int				ft_abs(int j);
+unsigned int	ft_abs_u(int j);
 double			ft_atof(const char *nptr);
 int				ft_atoi(const char *nptr);
 long			ft_atol(const char *nptr);
@@ -117,6 +118,8 @@ bool			ft_isodd(int value);
 bool			ft_isoverflow_int(const char *nptr);
 bool			ft_isoverflow_long(const char *nptr);
 char			*ft_itoa(int n);
+long			ft_labs(long j);
+unsigned long	ft_labs_u(long j);
 long			ft_max(long a, long b);
 size_t			ft_max_u(size_t a, size_t b);
 long			ft_min(long a, long b);

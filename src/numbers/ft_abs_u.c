@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_abs_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 01:16:45 by ldulling          #+#    #+#             */
-/*   Updated: 2025/03/05 21:21:18 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/05 23:05:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * The ft_abs function calculates the absolute value of a signed integer.
+ * The ft_abs_u function calculates the absolute value of a signed integer.
  *
  * @param j    The signed integer to get the absolute value of.
  *
- * @return     Returns the absolute value as a signed integer.
+ * @return     Returns the absolute value as an unsigned integer.
  *
- * @note       Calling ft_abs with j equal to INT_MIN is undefined behavior
- *             (mirrors the behavior of the original abs).
+ * @note       Because for INT_MIN the absolute value would exceed INT_MAX in
+ *             two's complement, the return type is unsigned.
  */
-int	ft_abs(int j)
+unsigned int	ft_abs_u(int j)
 {
 	if (j < 0)
-		return (-j);
+		return (-(unsigned int)j);
 	return (j);
 }
