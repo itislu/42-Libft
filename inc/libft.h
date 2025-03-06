@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:17:46 by ldulling          #+#    #+#             */
-/*   Updated: 2025/03/04 05:27:15 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/06 20:17:32 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ int				ft_isdigit(int c);
 int				ft_issign(int c);
 int				ft_isprint(int c);
 int				ft_isspace(int c);
-int				ft_tolower(int c);
-int				ft_toupper(int c);
+int				ft_tolower(int c) \
+					__attribute__((warn_unused_result));
+int				ft_toupper(int c) \
+					__attribute__((warn_unused_result));
 
 \
 /* Lists doubly-linked */
@@ -95,31 +97,46 @@ void			ft_lstswap_head(t_list **lst);
 \
 /* Memory */
 
-void			ft_bzero(void *s, size_t n);
-void			*ft_calloc(size_t nmemb, size_t size);
+void			ft_bzero(void *s, size_t n) \
+					__attribute__((nonnull));
+void			*ft_calloc(size_t nmemb, size_t size) \
+					__attribute__((malloc, alloc_size(1, 2), \
+									warn_unused_result));
 void			ft_free_and_null(void **ptr);
-void			*ft_memchr(const void *s, int c, size_t n);
-int				ft_memcmp(const void *s1, const void *s2, size_t n);
-void			*ft_memcpy(void *dest, const void *src, size_t n);
-void			*ft_memmove(void *dest, const void *src, size_t n);
-void			*ft_memset(void *s, int c, size_t n);
+void			*ft_memchr(const void *s, int c, size_t n) \
+					__attribute__((pure, nonnull));
+int				ft_memcmp(const void *s1, const void *s2, size_t n) \
+					__attribute__((pure, nonnull));
+void			*ft_memcpy(void *dest, const void *src, size_t n) \
+					__attribute__((nonnull));
+void			*ft_memmove(void *dest, const void *src, size_t n) \
+					__attribute__((nonnull));
+void			*ft_memset(void *s, int c, size_t n) \
+					__attribute__((nonnull));
 
 \
 /* Numbers */
 
-int				ft_abs(int j);
-unsigned int	ft_abs_u(int j);
-double			ft_atof(const char *nptr);
-int				ft_atoi(const char *nptr);
-long			ft_atol(const char *nptr);
+int				ft_abs(int j) \
+					__attribute__((const, warn_unused_result));
+unsigned int	ft_abs_u(int j) \
+					__attribute__((const, warn_unused_result));
+double			ft_atof(const char *nptr) \
+					__attribute__((pure, nonnull, warn_unused_result));
+int				ft_atoi(const char *nptr) \
+					__attribute__((pure, nonnull, warn_unused_result));
+long			ft_atol(const char *nptr) \
+					__attribute__((pure, nonnull, warn_unused_result));
 bool			ft_inrange_mul_u(size_t a, size_t b, size_t max);
 bool			ft_iseven(int value);
 bool			ft_isodd(int value);
 bool			ft_isoverflow_int(const char *nptr);
 bool			ft_isoverflow_long(const char *nptr);
 char			*ft_itoa(int n);
-long			ft_labs(long j);
-unsigned long	ft_labs_u(long j);
+long			ft_labs(long j) \
+					__attribute__((const, warn_unused_result));
+unsigned long	ft_labs_u(long j) \
+					__attribute__((const, warn_unused_result));
 long			ft_max(long a, long b);
 size_t			ft_max_u(size_t a, size_t b);
 long			ft_min(long a, long b);
@@ -145,11 +162,14 @@ void			ft_putstr_fd(const char *s, int fd);
 bool			ft_alphabetic(const char *str1, const char *str2);
 char			**ft_split(const char *s, char c);
 char			**ft_split_at_index(const char *str, size_t index);
-char			*ft_strchr(const char *s, int c);
-int				ft_strcmp(const char *s1, const char *s2);
+char			*ft_strchr(const char *s, int c) \
+					__attribute__((pure, nonnull));
+int				ft_strcmp(const char *s1, const char *s2) \
+					__attribute__((pure, nonnull));
 size_t			ft_strcount_str(const char *big, const char *little);
 char			*ft_strdel_sequence(const char *str, const char *sequence);
-char			*ft_strdup(const char *s);
+char			*ft_strdup(const char *s) \
+					__attribute__((malloc, nonnull));
 bool			ft_strisdigits(const char *s);
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 char			*ft_strjoin(const char *s1, const char *s2);
@@ -157,19 +177,24 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcpy_nbr_base(char *dst, long nbr, const char *base, \
 									size_t size);
-size_t			ft_strlen(const char *s);
+size_t			ft_strlen(const char *s) \
+					__attribute__((pure, nonnull));
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int				ft_strmatches_any(const char *str, int n, ...);
-int				ft_strncmp(const char *s1, const char *s2, size_t n);
-char			*ft_strndup(const char *s, size_t n);
+int				ft_strncmp(const char *s1, const char *s2, size_t n) \
+					__attribute__((pure, nonnull));
+char			*ft_strndup(const char *s, size_t n) \
+					__attribute__((malloc, nonnull));
 char			*ft_strnstr(const char *big, const char *little, size_t len);
-char			*ft_strrchr(const char *s, int c);
+char			*ft_strrchr(const char *s, int c) \
+					__attribute__((pure, nonnull));
 char			*ft_strrnstr(const char *big, const char *little, size_t len);
 bool			ft_strrplc_part(char **str, const char *rplcmt, size_t start, \
 								size_t len);
 char			*ft_strrplc_sequence(const char *str, const char *sequence, \
 										const char *rplcmt);
-char			*ft_strtok(char *str, const char *delim);
+char			*ft_strtok(char *str, const char *delim) \
+					__attribute__((nonnull (2)));
 char			*ft_strtrim(const char *s1, const char *set);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
 
