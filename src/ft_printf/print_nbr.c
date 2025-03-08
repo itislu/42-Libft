@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 03:03:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/08 01:05:14 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,24 +48,14 @@ unsigned int	print_nbr(long nbr, const t_format *f)
 static unsigned int	nbrlen(long nbr, const t_format *f)
 {
 	unsigned int	base;
-	unsigned int	len_nbr;
 
+	if (nbr == 0 && f->precision == 0)
+		return (0);
 	if (ft_strchr("xX", f->specifier) != NULL)
 		base = 16;
 	else
 		base = 10;
-	if (nbr == 0 && f->precision != 0)
-		len_nbr = 1;
-	else
-	{
-		len_nbr = 0;
-		while (nbr != 0)
-		{
-			nbr /= base;
-			len_nbr++;
-		}
-	}
-	return (len_nbr);
+	return (ft_nbrlen_base_u(ft_labs_u(nbr), base));
 }
 
 static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, \
@@ -122,9 +112,7 @@ static unsigned int	print_nbr_in_correct_base(long nbr, const t_format *f)
 		printed += ft_putnbr_base_fd(nbr, "0123456789abcdef", f->fd);
 	else if (f->specifier == 'X')
 		printed += ft_putnbr_base_fd(nbr, "0123456789ABCDEF", f->fd);
-	else if (nbr < 0)
-		printed += ft_putnbr_base_fd(-nbr, "0123456789", f->fd);
 	else
-		printed += ft_putnbr_base_fd(nbr, "0123456789", f->fd);
+		printed += ft_putnbr_base_fd(ft_labs(nbr), "0123456789", f->fd);
 	return (printed);
 }

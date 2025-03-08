@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 03:05:05 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/08 01:05:42 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,14 @@ void	sprint_nbr(long nbr, t_sformat *f)
 static unsigned int	nbrlen(long nbr, const t_sformat *f)
 {
 	unsigned int	base;
-	unsigned int	len_nbr;
 
+	if (nbr == 0 && f->precision == 0)
+		return (0);
 	if (ft_strchr("xX", f->specifier) != NULL)
 		base = 16;
 	else
 		base = 10;
-	if (nbr == 0 && f->precision != 0)
-		len_nbr = 1;
-	else
-	{
-		len_nbr = 0;
-		while (nbr != 0)
-		{
-			nbr /= base;
-			len_nbr++;
-		}
-	}
-	return (len_nbr);
+	return (ft_nbrlen_base_u(ft_labs_u(nbr), base));
 }
 
 static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, \
@@ -112,8 +102,6 @@ static void	sprint_nbr_in_correct_base(long nbr, t_sformat *f)
 		strcpy_nbr_record(f, nbr, "0123456789abcdef");
 	else if (f->specifier == 'X')
 		strcpy_nbr_record(f, nbr, "0123456789ABCDEF");
-	else if (nbr < 0)
-		strcpy_nbr_record(f, -nbr, "0123456789");
 	else
-		strcpy_nbr_record(f, nbr, "0123456789");
+		strcpy_nbr_record(f, ft_labs(nbr), "0123456789");
 }
