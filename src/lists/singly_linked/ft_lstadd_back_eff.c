@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 00:35:15 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:09:18 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/02 10:04:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
  */
 void	ft_lstadd_back_eff(t_list **lst, t_list **tail, t_list *new)
 {
+	// TODO Test thoroughly, like tail == NULL
 	if (*lst == NULL)
 		*lst = new;
 	else

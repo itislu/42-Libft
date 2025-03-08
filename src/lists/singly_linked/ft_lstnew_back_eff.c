@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 19:11:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:09:54 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/02 10:04:42 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ bool	ft_lstnew_back_eff(t_list **lst, t_list **tail, void *content)
 {
 	t_list	*new_node;
 
+	// TODO Test thoroughly, like tail == NULL
 	new_node = ft_lstnew(content);
 	if (new_node == NULL)
 		return (false);
