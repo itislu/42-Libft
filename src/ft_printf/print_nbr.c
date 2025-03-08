@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:55 by ldulling          #+#    #+#             */
-/*   Updated: 2025/03/08 01:05:14 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/08 06:21:35 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ static unsigned int	nbrlen(long nbr, const t_format *f)
 		return (0);
 	if (ft_strchr("xX", f->specifier) != NULL)
 		base = 16;
+	else if (f->specifier == 'o')
+		base = 8;
 	else
 		base = 10;
 	return (ft_nbrlen_base_u(ft_labs_u(nbr), base));
@@ -66,13 +68,17 @@ static unsigned int	fullnbrlen(long nbr, unsigned int len_nbr, \
 	len_full = len_nbr;
 	if ((int)len_nbr < f->precision)
 		len_full = f->precision;
-	if (ft_strchr("uxX", f->specifier) == NULL)
+	if (ft_strchr("ouxX", f->specifier) == NULL)
 		if (!(nbr == 0 && f->precision == 0))
 			if (nbr < 0 || f->plus || f->space)
 				len_full++;
-	if (ft_strchr("xX", f->specifier) != NULL)
-		if (f->hash && nbr != 0)
+	if (f->hash && nbr != 0)
+	{
+		if (ft_strchr("xX", f->specifier) != NULL)
 			len_full += sizeof("0x") - 1;
+		else if (f->specifier == 'o')
+			len_full++;
+	}
 	return (len_full);
 }
 
@@ -81,7 +87,7 @@ static unsigned int	print_prefix(long nbr, const t_format *f)
 	unsigned int	printed;
 
 	printed = 0;
-	if (ft_strchr("xX", f->specifier) != NULL)
+	if (ft_strchr("oxX", f->specifier) != NULL)
 	{
 		if (f->hash && nbr != 0)
 		{
@@ -89,6 +95,8 @@ static unsigned int	print_prefix(long nbr, const t_format *f)
 				printed += ft_putnstr_fd("0x", 2, f->fd);
 			else if (f->specifier == 'X')
 				printed += ft_putnstr_fd("0X", 2, f->fd);
+			else if (f->specifier == 'o')
+				printed += ft_putnstr_fd("0", 1, f->fd);
 		}
 	}
 	else
@@ -112,6 +120,8 @@ static unsigned int	print_nbr_in_correct_base(long nbr, const t_format *f)
 		printed += ft_putnbr_base_fd(nbr, "0123456789abcdef", f->fd);
 	else if (f->specifier == 'X')
 		printed += ft_putnbr_base_fd(nbr, "0123456789ABCDEF", f->fd);
+	else if (f->specifier == 'o')
+		printed += ft_putnbr_base_fd(nbr, "01234567", f->fd);
 	else
 		printed += ft_putnbr_base_fd(ft_labs(nbr), "0123456789", f->fd);
 	return (printed);

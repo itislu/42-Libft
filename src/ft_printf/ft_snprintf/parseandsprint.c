@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 01:54:14 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/08 01:03:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	sprint_argument(t_sformat *f, va_list *ap)
 		sprint_ptr((size_t)va_arg(*ap, void *), f);
 	else if (f->specifier == 'd' || f->specifier == 'i')
 		sprint_nbr((long)va_arg(*ap, int), f);
+	else if (f->specifier == 'o')
+		sprint_nbr((long)va_arg(*ap, unsigned int), f);
 	else if (f->specifier == 'u')
 		sprint_nbr((long)va_arg(*ap, unsigned int), f);
 	else if (f->specifier == 'x' || f->specifier == 'X')

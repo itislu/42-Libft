@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:27:27 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 07:13:59 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/08 00:56:55 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-# define SPECIFIERS				"cspdiuxX%"
+# define SPECIFIERS				"cspdiouxX%"
 # define FLAGS					"#+- 0"
 # define NULL_PRINTOUT_PTR		"(nil)"
 # define NULL_PRINTOUT_STR		"(null)"

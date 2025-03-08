@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 02:02:33 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/08 00:57:06 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ size_t	print_argument(const t_format *f, va_list *ap)
 		printed = print_ptr((size_t)va_arg(*ap, void *), f);
 	else if (f->specifier == 'd' || f->specifier == 'i')
 		printed = print_nbr((long)va_arg(*ap, int), f);
+	else if (f->specifier == 'o')
+		printed = print_nbr((long)va_arg(*ap, unsigned int), f);
 	else if (f->specifier == 'u')
 		printed = print_nbr((long)va_arg(*ap, unsigned int), f);
 	else if (f->specifier == 'x' || f->specifier == 'X')
