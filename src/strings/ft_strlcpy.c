@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:57 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/12 23:48:13 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/07 04:14:45 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@
  * @note          Calling ft_strlcpy with dst equal to NULL with a size not 0,
  *                or with src equal to NULL, is undefined behavior (mirrors the 
  *                behavior of the original strlcpy).
+ *                If the src and dst strings overlap, the behavior is undefined.
  */
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *const dst, const char *const src, const size_t size) // This was a talk with Gabriel, we think it would be correct, but we both think it's also ugly
 {
 	const size_t	srclen = ft_strlen(src);
 	const size_t	cpylen = MIN(srclen, size - 1);

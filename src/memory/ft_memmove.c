@@ -26,22 +26,18 @@
  *
  * @return        Returns a pointer to dest.
  *
- * @note          Calling ft_memmove with dest or src equal to NULL with n not 0
- *                is undefined behavior (mirrors the behavior of the original 
- *                memmove).
+ * @note          Calling ft_memmove with dest or src equal to NULL is undefined
+ *                behavior (mirrors the behavior of the original memmove).
  * @note          Because of the use of `uintptr_t`, C99 is required and only
  *                platforms where `uintptr_t` exists are supported.
  */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	const unsigned char	*casted_ptr_src = (const unsigned char *)src;
 	unsigned char		*casted_ptr_dest;
-	const unsigned char	*casted_ptr_src;
 	size_t				i;
 
-	if (dest == NULL && src == NULL)
-		return (NULL);
 	casted_ptr_dest = (unsigned char *)dest;
-	casted_ptr_src = (const unsigned char *)src;
 	if ((uintptr_t)dest <= (uintptr_t)src)
 	{
 		i = 0;

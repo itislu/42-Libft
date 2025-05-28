@@ -6,11 +6,11 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 12:48:32 by ldulling          #+#    #+#              #
-#    Updated: 2025/01/31 14:05:14 by ldulling         ###   ########.fr        #
+#    Updated: 2025/03/08 06:29:54 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
+#TODO Not tracking changes to Makefile yet
 # ***************************** CONFIGURATION ******************************** #
 
 NAME			:=	libft.a
@@ -32,8 +32,8 @@ SOURCELISTS		:=	libft.mk
 
 # Flags:
 CC				?=	cc
-CFLAGS			?=	-Wall -Wextra -Werror -pedantic
-INCFLAGS		:=	$(addprefix -I,$I)
+CFLAGS			?=	-Wall -Wextra -Werror -pedantic -g #-fsanitize=address,undefined,bounds,float-divide-by-zero
+INCFLAGS		:=	$(addprefix -I,$I) # TODO `make norm` does not check the private headers
 DEBUGFLAGS		:=	-g
 ARFLAGS			:=	rcs
 
@@ -60,11 +60,11 @@ $(OBJ):	$O%.o	:	$S%.c | $(OBJ_SUBDIRS)
 					$(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
 
 $(DEP):	$D%.d	:	$S%.c | $(DEP_SUBDIRS)
-	@				$(CC) $(CFLAGS) $(INCFLAGS) -M -MP -MF $@ -MT "$O$*.o $@" $<
+					$(CC) $(CFLAGS) $(INCFLAGS) -M -MP -MF $@ -MT "$O$*.o $@" $<
 
 $(OBJ_SUBDIRS) \
 $(DEP_SUBDIRS)	:
-	@				mkdir -p $@
+					mkdir -p $@
 
 cleandep		:
 ifneq (,$(wildcard $(DEP)))

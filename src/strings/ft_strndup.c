@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:14:59 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 00:58:22 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/08 08:05:30 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@
  *             allocation failed.
  *             The returned string will have to be freed later.
  *
- * @note       Calling ft_strdup with s equal to NULL with n not 0 is undefined 
- *             behavior (mirrors the behavior of the original strndup).
+ * @note       Calling ft_strdup with s equal to NULL is undefined behavior 
+ *             (mirrors the behavior of the original strndup).
  */
 char	*ft_strndup(const char *s, size_t n)
 {
 	char	*dup;
 	size_t	len;
 
-	if (s == NULL && n == 0)
+	if (n == 0)
 		return (ft_strdup(""));
-	len = ft_strlen(s);
+	len = ft_strlen(s); // TODO Could use ft_strnlen() here and then remove above and below ifs
 	if (len > n)
 		len = n;
 	dup = (char *)malloc(len + 1);
