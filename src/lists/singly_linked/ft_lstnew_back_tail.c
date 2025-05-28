@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_back_eff.c                               :+:      :+:    :+:   */
+/*   ft_lstnew_back_tail.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 19:11:17 by ldulling          #+#    #+#             */
-/*   Updated: 2025/01/29 10:09:54 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/05/28 21:15:18 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stddef.h>
 
 /**
- * The ft_lstnew_back_eff function creates a new node with the provided content
+ * The ft_lstnew_back_tail function creates a new node with the provided content
  * and adds it to the end of the singly linked list.
  * It uses the tail pointer of the list to avoid traversing the whole list.
  * The tail pointer is updated to point to the new node.
@@ -26,13 +26,13 @@
  * @return           Returns true if the new node was successfully added, false
  *                   if malloc failed.
  */
-bool	ft_lstnew_back_eff(t_list **lst, t_list **tail, void *content)
+bool	ft_lstnew_back_tail(t_list **lst, t_list **tail, void *content)
 {
 	t_list	*new_node;
 
 	new_node = ft_lstnew(content);
 	if (new_node == NULL)
 		return (false);
-	ft_lstadd_back_eff(lst, tail, new_node);
+	ft_lstadd_back_tail(lst, tail, new_node);
 	return (true);
 }
