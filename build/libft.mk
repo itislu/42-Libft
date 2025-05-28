@@ -113,6 +113,7 @@ SRC		+=	$(addprefix $(DIR), \
 			ft_lstsort_bubble.c \
 			ft_lstsort_merge.c \
 			ft_lstswap_head.c \
+			ft_lstto_array.c \
 )
 
 # Memory:
@@ -189,8 +190,8 @@ SRC		+=	$(addprefix $(DIR), \
 			ft_strncmp.c \
 			ft_strndup.c \
 			ft_strnstr.c \
+			ft_strnstr_last.c \
 			ft_strrchr.c \
-			ft_strrnstr.c \
 			ft_strrplc_part.c \
 			ft_strrplc_sequence.c \
 			ft_strtok.c \

@@ -93,6 +93,7 @@ void			ft_lstsort_bubble(t_list **lst, \
 void			ft_lstsort_merge(t_list **lst, \
 								const void *(*cmp)(const void *, const void *));
 void			ft_lstswap_head(t_list **lst);
+void			**ft_lstto_array(t_list **lst);
 
 \
 /* Memory */
@@ -173,8 +174,10 @@ char			*ft_strdup(const char *s) \
 bool			ft_strisdigits(const char *s);
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 char			*ft_strjoin(const char *s1, const char *s2);
-size_t			ft_strlcat(char *dst, const char *src, size_t size);
-size_t			ft_strlcpy(char *dst, const char *src, size_t size);
+size_t			ft_strlcat(char *dst, const char *src, size_t size) \
+					__attribute__((nonnull (2)));
+size_t			ft_strlcpy(char *dst, const char *src, size_t size) \
+					__attribute__((nonnull (2))); //! ft_memcpy gets called with dst as nonnull argument
 size_t			ft_strlcpy_nbr_base(char *dst, long nbr, const char *base, \
 									size_t size);
 size_t			ft_strlen(const char *s) \
@@ -185,10 +188,13 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n) \
 					__attribute__((pure, nonnull));
 char			*ft_strndup(const char *s, size_t n) \
 					__attribute__((malloc, nonnull));
-char			*ft_strnstr(const char *big, const char *little, size_t len);
+char			*ft_strnstr(const char *big, const char *little, size_t len) \
+					__attribute__((pure, nonnull));
+char			*ft_strnstr_last(const char *big, const char *little, \
+									size_t len) \
+					__attribute__((pure, nonnull));
 char			*ft_strrchr(const char *s, int c) \
 					__attribute__((pure, nonnull));
-char			*ft_strrnstr(const char *big, const char *little, size_t len);
 bool			ft_strrplc_part(char **str, const char *rplcmt, size_t start, \
 								size_t len);
 char			*ft_strrplc_sequence(const char *str, const char *sequence, \

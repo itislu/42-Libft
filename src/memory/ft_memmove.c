@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:08:23 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 00:44:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/07 00:56:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,16 @@
  *
  * @return        Returns a pointer to dest.
  *
- * @note          Calling ft_memcpy with dest or src equal to NULL with n not 0
- *                is undefined behavior (mirrors the behavior of the original 
- *                memmove).
+ * @note          Calling ft_memcpy with dest or src equal to NULL is undefined
+ *                behavior (mirrors the behavior of the original memmove).
  */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	const unsigned char	*casted_ptr_src = (const unsigned char *)src;
 	unsigned char		*casted_ptr_dest;
-	const unsigned char	*casted_ptr_src;
 	size_t				i;
 
-	if (dest == NULL && src == NULL)
-		return (NULL);
 	casted_ptr_dest = (unsigned char *)dest;
-	casted_ptr_src = (const unsigned char *)src;
 	if (casted_ptr_dest <= casted_ptr_src)
 	{
 		i = 0;

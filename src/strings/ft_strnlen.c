@@ -1,0 +1,1 @@
+// TODO Search for regex ft_strlen(.*);\nif ( to replace ft_strlen with ft_strnlen

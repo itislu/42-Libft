@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:27:59 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 21:11:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/08 00:27:53 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stddef.h>
 # include <sys/types.h>
 
-# define FD_MAX			1048576
 # define NO_NL			-1
 
 typedef struct s_buf

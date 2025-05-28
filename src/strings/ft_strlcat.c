@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:15:16 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 02:44:19 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/07 04:19:58 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,22 @@
  * @note          Calling ft_strlcat with dst equal to NULL with a size not 0,
  *                or with src equal to NULL, is undefined behavior (mirrors the 
  *                behavior of the original strlcat).
+ *                If the src and dst strings overlap, the behavior is undefined.
  */
+// TODO: Add restrict keyword at somepoint, here it's really needed bc the behavior with overlapping memory differs to the original bc it is undefined.
+#include <string.h>
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	catlen;
 	size_t	dstlen;
+	size_t	remaining;
 	size_t	srclen;
 
-	if (dst == NULL && size == 0 && src != NULL)
-		return (0);
-	dstlen = ft_strlen(dst);
-	catlen = dstlen;
-	srclen = 0;
-	while (catlen + 1 < size && src[srclen] != '\0')
-	{
-		dst[catlen] = src[srclen];
-		catlen++;
-		srclen++;
-	}
-	if (dstlen < size)
-		dst[catlen] = '\0';
-	while (src[srclen] != '\0')
-		srclen++;
-	if (size < dstlen)
-		return (size + srclen);
+	if (size == 0)
+		return (ft_strlen(src));
+	dstlen = strnlen(dst, size); // TODO
+	remaining = size - dstlen;
+	if (remaining == 0)
+		return (dstlen + ft_strlen(src));
+	srclen = ft_strlcpy(&dst[dstlen], src, remaining);
 	return (dstlen + srclen);
 }

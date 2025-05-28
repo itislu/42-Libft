@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:50:45 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 21:00:22 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:17:18 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 static int	search_null(va_list *ap, int n);
 
+// TODO Change to array interface and mention compound literal
 /**
  * The ft_strmatches_any function checks if the first string matches any of the
  * n other strings provided as arguments.

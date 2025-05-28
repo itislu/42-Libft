@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:39:46 by ldulling          #+#    #+#             */
-/*   Updated: 2025/03/04 04:03:24 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/03/07 01:21:33 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  * long integer value (9223372036854775807) or the maximum negative long integer
  * value (-9223372036854775808) depending on the sign.
  *
- * @param nptr    The NULL-terminated string to check.
+ * @param nptr    The NUL-terminated string to check.
  *
  * @return        Returns true if the string represents a number that would
  *                cause an overflow, false otherwise.
