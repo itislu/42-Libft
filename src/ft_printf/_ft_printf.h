@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:27:30 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/04 18:15:33 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:53:10 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdbool.h>
 # include <stddef.h>
+# include <stdint.h>
 
 typedef struct s_format
 {
@@ -43,7 +44,7 @@ unsigned int	print_nbr_padding_right(const t_format *f, \
 unsigned int	print_nbr_zero_padding(const t_format *f, unsigned int len_nbr);
 size_t			print_parsed(const char *format, size_t parsed, \
 								const t_format *f);
-unsigned int	print_ptr(size_t ptr, const t_format *f);
+unsigned int	print_ptr(uintptr_t ptr, const t_format *f);
 unsigned int	print_ptr_padding_left(const t_format *f, \
 										unsigned int len_full);
 unsigned int	print_ptr_padding_right(const t_format *f, \

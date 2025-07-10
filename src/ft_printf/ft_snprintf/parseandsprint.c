@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 01:54:14 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:50:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "../_ft_printf_shared.h"
 #include <stdarg.h>
 #include <stddef.h>
+#include <stdint.h>
 
 void	parseandsprint(const char *format, size_t *i, t_sformat *f, va_list *ap)
 {
@@ -42,7 +43,7 @@ void	sprint_argument(t_sformat *f, va_list *ap)
 	else if (f->specifier == 's')
 		sprint_str(va_arg(*ap, const char *), f);
 	else if (f->specifier == 'p')
-		sprint_ptr((size_t)va_arg(*ap, void *), f);
+		sprint_ptr((uintptr_t)va_arg(*ap, void *), f);
 	else if (f->specifier == 'd' || f->specifier == 'i')
 		sprint_nbr((long)va_arg(*ap, int), f);
 	else if (f->specifier == 'u')

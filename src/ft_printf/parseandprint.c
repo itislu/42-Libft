@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:41:25 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/13 02:02:33 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:53:24 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <errno.h>
 #include <stdarg.h>
 #include <stddef.h>
+#include <stdint.h>
 
 size_t	parseandprint(const char *format, size_t *i, t_format *f, va_list *ap)
 {
@@ -50,7 +51,7 @@ size_t	print_argument(const t_format *f, va_list *ap)
 	else if (f->specifier == 's')
 		printed = print_str(va_arg(*ap, const char *), f);
 	else if (f->specifier == 'p')
-		printed = print_ptr((size_t)va_arg(*ap, void *), f);
+		printed = print_ptr((uintptr_t)va_arg(*ap, void *), f);
 	else if (f->specifier == 'd' || f->specifier == 'i')
 		printed = print_nbr((long)va_arg(*ap, int), f);
 	else if (f->specifier == 'u')

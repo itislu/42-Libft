@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:27:24 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/12 23:42:17 by ldulling         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:52:05 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdbool.h>
 # include <stddef.h>
+# include <stdint.h>
 
 typedef struct s_sformat
 {
@@ -45,7 +46,7 @@ void	sprint_nbr_padding_left(t_sformat *f, char padding, \
 void	sprint_nbr_padding_right(t_sformat *f, unsigned int len_full);
 void	sprint_nbr_zero_padding(t_sformat *f, unsigned int len_nbr);
 void	sprint_parsed(const char *format, size_t parsed, t_sformat *f);
-void	sprint_ptr(size_t ptr, t_sformat *f);
+void	sprint_ptr(uintptr_t ptr, t_sformat *f);
 void	sprint_ptr_padding_left(t_sformat *f, unsigned int len_full);
 void	sprint_ptr_padding_right(t_sformat *f, unsigned int len_full);
 void	sprint_ptr_prefix(t_sformat *f);
