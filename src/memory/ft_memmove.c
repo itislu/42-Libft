@@ -6,11 +6,12 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:08:23 by ldulling          #+#    #+#             */
-/*   Updated: 2025/02/05 00:44:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2026/01/11 19:31:27 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdint.h>
 
 /**
  * The ft_memmove function copies n bytes from memory area src to memory area
@@ -25,9 +26,11 @@
  *
  * @return        Returns a pointer to dest.
  *
- * @note          Calling ft_memcpy with dest or src equal to NULL with n not 0
+ * @note          Calling ft_memmove with dest or src equal to NULL with n not 0
  *                is undefined behavior (mirrors the behavior of the original 
  *                memmove).
+ * @note          Because of the use of `uintptr_t`, C99 is required and only
+ *                platforms where `uintptr_t` exists are supported.
  */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -39,7 +42,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (NULL);
 	casted_ptr_dest = (unsigned char *)dest;
 	casted_ptr_src = (const unsigned char *)src;
-	if (casted_ptr_dest <= casted_ptr_src)
+	if ((uintptr_t)casted_ptr_dest <= (uintptr_t)casted_ptr_src)
 	{
 		i = 0;
 		while (i < n)
