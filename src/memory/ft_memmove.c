@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:08:23 by ldulling          #+#    #+#             */
-/*   Updated: 2026/01/11 19:31:27 by ldulling         ###   ########.fr       */
+/*   Updated: 2026/02/03 20:46:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (NULL);
 	casted_ptr_dest = (unsigned char *)dest;
 	casted_ptr_src = (const unsigned char *)src;
-	if ((uintptr_t)casted_ptr_dest <= (uintptr_t)casted_ptr_src)
+	if ((uintptr_t)dest <= (uintptr_t)src)
 	{
 		i = 0;
 		while (i < n)
